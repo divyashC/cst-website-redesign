@@ -1,4 +1,5 @@
 import React from "react";
+import { AiFillEye, AiFillCalendar } from "react-icons/ai";
 // import { Link } from "react-router-dom";
 
 const Announcement = ({ title, views, datePosted, description }) => {
@@ -15,9 +16,9 @@ const Announcement = ({ title, views, datePosted, description }) => {
 			<div className="flex flex-col flex-grow">
 				<h3 className="text-lg font-semibold text-gray-700">{title}</h3>
 				<div className="flex items-center text-sm text-gray-500">
-					<i class="bi bi-eye mx-1"></i>
+					<AiFillEye className="mx-1" />
 					<span className="mr-2">{views}</span>
-					<i className="m-1 bi bi-calendar3"></i>
+					<AiFillCalendar className="mx-1" />
 					<span>{datePosted}</span>
 				</div>
 				<p className="text-sm text-gray-600">{description}</p>
