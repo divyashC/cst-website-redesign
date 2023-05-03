@@ -19,6 +19,8 @@ import ErrorPage from "./pages/Error";
 const App = () => {
 	return (
 		<Router>
+			
+			{/* placing navbar */}
 			<NavBar />
 			<Routes>
 				<Route path="/" element={<Home />} />
@@ -41,6 +43,8 @@ const App = () => {
 				/>
 				<Route path="*" element={<ErrorPage />} />
 			</Routes>
+
+			{/* placing footer */}
 			<Footer />
 		</Router>
 	);
