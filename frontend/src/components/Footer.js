@@ -5,82 +5,96 @@ const Footer = () => {
 	return (
 		// <div className="fixed bottom-0 w-full py-8 bg-gray-200">
 		<div className="py-8 bg-gray-200">
+<<<<<<< HEAD
 			<div class="grid grid-row md:grid-cols-3 max-w-5xl mx-auto gap-2">
 				<div class="p-4 flex flex-col items-center">
 					<h3 class="font-bold text-gray-800 mb-4 text-xl">Quick Links</h3>
 					<div className="flex flex-row ">
 						<div class="text-gray-500 space-y-2 flex flex-col mr-12">
+=======
+			<div className="grid max-w-5xl grid-cols-3 gap-2 mx-auto">
+				<div className="p-4">
+					<h3 className="mb-4 text-xl font-bold text-gray-800">Quick Links</h3>
+					<div className="flex flex-row">
+						<div className="flex flex-col mr-12 space-y-2 text-gray-500">
+>>>>>>> 8df1d80e8a93f92eba69350203e6707e9e1c8f65
 							<a
 								href="https://ims.rub.edu.bt"
-								class="transition-colors duration-300 hover:text-blue-700"
+								className="transition-colors duration-300 hover:text-blue-700"
 							>
 								RUB IMS
 							</a>
 							<a
 								href="https://vle.cst.edu.bt"
-								class="transition-colors duration-300 hover:text-blue-700"
+								className="transition-colors duration-300 hover:text-blue-700"
 							>
 								VLE (Moodle)
 							</a>
 							<a
 								href="https://lib.cst.edu.bt"
-								class="transition-colors duration-300 hover:text-blue-700"
+								className="transition-colors duration-300 hover:text-blue-700"
 							>
 								Library (OPAC)
 							</a>
 							<a
 								href="https://journal.cst.edu.bt"
-								class="transition-colors duration-300 hover:text-blue-700"
+								className="transition-colors duration-300 hover:text-blue-700"
 							>
 								Zoring Melong
 							</a>
 							<a
 								href="http://mail.rub.edu.bt/"
-								class="transition-colors duration-300 hover:text-blue-700"
+								className="transition-colors duration-300 hover:text-blue-700"
 							>
 								Mail
 							</a>
 						</div>
-						<div class="text-gray-500 space-y-2 flex flex-col">
+						<div className="flex flex-col space-y-2 text-gray-500">
 							<a
 								href="https://ims.rub.edu.bt"
-								class="transition-colors duration-300 hover:text-blue-700"
+								className="transition-colors duration-300 hover:text-blue-700"
 							>
 								RUB IMS
 							</a>
 							<a
 								href="https://vle.cst.edu.bt"
-								class="transition-colors duration-300 hover:text-blue-700"
+								className="transition-colors duration-300 hover:text-blue-700"
 							>
 								VLE (Moodle)
 							</a>
 							<a
 								href="https://lib.cst.edu.bt"
-								class="transition-colors duration-300 hover:text-blue-700"
+								className="transition-colors duration-300 hover:text-blue-700"
 							>
 								Library (OPAC)
 							</a>
 							<a
 								href="https://journal.cst.edu.bt"
-								class="transition-colors duration-300 hover:text-blue-700"
+								className="transition-colors duration-300 hover:text-blue-700"
 							>
 								Zoring Melong
 							</a>
 							<a
 								href="http://mail.rub.edu.bt/"
-								class="transition-colors duration-300 hover:text-blue-700"
+								className="transition-colors duration-300 hover:text-blue-700"
 							>
 								Mail
 							</a>
 						</div>
 					</div>
 				</div>
-				<div class="flex items-center justify-center">
+				<div className="flex items-center justify-center">
 					<img src={CSTLogo} alt="CST Logo" height={120} width={120} />
 				</div>
+<<<<<<< HEAD
 				<div class="p-4 flex flex-col items-center justify-center">
 					<h3 class="font-bold text-gray-800 mb-4 text-xl">Address</h3>
 					<div class="text-gray-500 space-y-1 text-center md:text-left">
+=======
+				<div className="p-4">
+					<h3 className="mb-4 text-xl font-bold text-gray-800">Address</h3>
+					<div className="space-y-1 text-gray-500">
+>>>>>>> 8df1d80e8a93f92eba69350203e6707e9e1c8f65
 						<p>College of Science and Technology</p>
 						<p>Rinchending, Phuentsholing</p>
 						<p>Chhukha, Bhutan</p>
