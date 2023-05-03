@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { AiOutlineClose } from "react-icons/ai";
 
 const SideNav = ({ isSideNavOpen, toggleSideNav }) => {
 	return (
@@ -8,10 +9,14 @@ const SideNav = ({ isSideNavOpen, toggleSideNav }) => {
 				isSideNavOpen ? "" : "hidden"
 			}`}
 		>
-			<i
-				className="absolute top-0 right-0 p-4 text-5xl font-bold text-white cursor-pointer bi bi-x md:text-6xl lg:text-6xl md:p-6 lg:p-8"
-				onClick={toggleSideNav}
-			></i>
+			<i className="text-[2rem]">
+				<AiOutlineClose
+					className="absolute top-0 right-0 p-4 font-bold text-white cursor-pointer md:text-6xl lg:text-6xl md:p-6 lg:p-8"
+					onClick={toggleSideNav}
+					color="white"
+				/>
+			</i>
+
 			<ul className="mt-20 ml-8 text-xl text-white md:text-2xl lg:text-3xl md:mt-28 lg:mt-36 md:ml-10 lg:ml-12">
 				<li className="mb-4 md:mb-6 lg:mb-8">
 					<Link to="/">Home</Link>
