@@ -1,7 +1,10 @@
 import React from "react";
+import NewsComponent from "../components/News/NewsExpanded";
 
 const NewsAndAnnouncements = () => {
-	return <div>NewsAndAnnouncements</div>;
+	return (
+		<NewsComponent/>
+		);
 };
 
 export default NewsAndAnnouncements;
