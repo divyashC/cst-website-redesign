@@ -26,7 +26,7 @@ const StaffDirectory = () => {
           >
             <FaAngleRight />
           </label>
-		<div className="flex grid grid-flow-row flex-col gap-3">
+		<div className="flex">
           <div className=" grid-row bg-gray-100 h-20 md:h-[70%] w-[90vw] md:w-20 mt-[-650px] ml-[-15px] md:mt-[0px] md:ml-[18px] p-[5px] rounded-xl flex md:flex-col gap-3 overflow-scroll scrollbar-hide">
             {staff.map((data, key) => {
               return (
@@ -46,7 +46,7 @@ const StaffDirectory = () => {
             })}
           </div>
 
-		 <div className="bg-[#eee] h-[100%] w-[90%] flex flex-col items-center pt-10 md:mt-0 md:ml-0">
+		 <div className="bg-[#eee] h-[100%] w-[70vw] flex flex-col items-center pt-10 md:mt-0 md:ml-0">
 			<h1 className="text-[2rem] font-semibold" >Staff Directory</h1>
 			<h2 className="text-[1.75rem] text-gray-400 font-medium">{directoryName}</h2>
 
