@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 
 const SideNav = ({ isSideNavOpen, toggleSideNav }) => {
+	let iconStyles = { color: "white", fontSize: "115px", fontWeight: "bold" };
 	return (
 		<div
 			className={`fixed top-0 right-0 z-50 w-9/12 h-screen bg-gray-800 opacity-80 md:w-6/12 lg:w-3/12 ${
@@ -13,7 +14,7 @@ const SideNav = ({ isSideNavOpen, toggleSideNav }) => {
 				<AiOutlineClose
 					className="absolute top-0 right-0 p-4 font-bold text-white cursor-pointer md:text-6xl lg:text-6xl md:p-6 lg:p-8"
 					onClick={toggleSideNav}
-					color="white"
+					style={iconStyles}
 				/>
 			</i>
 
