@@ -15,11 +15,12 @@ import Tender from "./pages/Tender";
 import News from "./pages/News";
 import NewsAndAnnouncements from "./pages/NewsAndAnnouncements";
 import ErrorPage from "./pages/Error";
+import GamesSports from "./pages/GamesSports";
+import Library from "./pages/Library";
 
 const App = () => {
 	return (
 		<Router>
-			
 			{/* placing navbar */}
 			<NavBar />
 			<Routes>
@@ -41,6 +42,8 @@ const App = () => {
 					path="/news-and-announcements"
 					element={<NewsAndAnnouncements />}
 				/>
+				<Route path="/games-sports" element={<GamesSports />} />
+				<Route path="/library" element={<Library />} />
 				<Route path="*" element={<ErrorPage />} />
 			</Routes>
 
