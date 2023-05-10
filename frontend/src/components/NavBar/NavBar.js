@@ -11,7 +11,7 @@ const NavBar = () => {
 
 	return (
 		<div>
-			<TopNav toggleSideNav={toggleSideNav} />
+			<TopNav toggleSideNav={toggleSideNav} isSideNavOpen={isSideNavOpen}/>
 			<SideNav isSideNavOpen={isSideNavOpen} toggleSideNav={toggleSideNav} />
 		</div>
 	);

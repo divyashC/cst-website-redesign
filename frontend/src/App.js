@@ -10,44 +10,180 @@ import Downloads from "./pages/Downloads";
 import Events from "./pages/Events";
 import LifeAtCST from "./pages/LifeAtCST";
 import ResearchAndServices from "./pages/ResearchAndServices";
+import Services from "./pages/Services";
 import StaffDirectory from "./pages/StaffDirectory";
 import Tender from "./pages/Tender";
 import News from "./pages/News";
 import NewsAndAnnouncements from "./pages/NewsAndAnnouncements";
 import ErrorPage from "./pages/Error";
+import GamesSports from "./pages/GamesSports";
+import Library from "./pages/Library";
+import Accommodation from "./pages/Accommodation";
+import FeeStruture from "./pages/FeeStruture";
+import AdmissionPolicy from "./pages/AdmissionPolicy";
+
+
+const Layout = ({ children }) => {
+	return (
+		<>
+			<NavBar />
+			{children}
+			<Footer />
+		</>
+	);
+};
 
 const App = () => {
 	return (
 		<Router>
-			
-			{/* placing navbar */}
-			<NavBar />
 			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/about" element={<About />} />
-				<Route path="/academics" element={<Academics />} />
-				<Route path="/connect" element={<Connect />} />
-				<Route path="/downloads" element={<Downloads />} />
-				<Route path="/events" element={<Events />} />
-				<Route path="/life-at-cst" element={<LifeAtCST />} />
+				<Route
+					path="/"
+					element={
+						<Layout>
+							<Home />
+						</Layout>
+					}
+				/>
+				<Route
+					path="/about"
+					element={
+						<Layout>
+							<About />
+						</Layout>
+					}
+				/>
+				<Route
+					path="/academics"
+					element={
+						<Layout>
+							<Academics />
+						</Layout>
+					}
+				/>
+				<Route
+					path="/connect"
+					element={
+						<Layout>
+							<Connect />
+						</Layout>
+					}
+				/>
+				<Route
+					path="/downloads"
+					element={
+						<Layout>
+							<Downloads />
+						</Layout>
+					}
+				/>
+				<Route
+					path="/events"
+					element={
+						<Layout>
+							<Events />
+						</Layout>
+					}
+				/>
+				<Route
+					path="/life-at-cst"
+					element={
+						<Layout>
+							<LifeAtCST />
+						</Layout>
+					}
+				/>
 				<Route
 					path="/research-and-services"
-					element={<ResearchAndServices />}
+					element={
+						<Layout>
+							<ResearchAndServices />
+						</Layout>
+					}
 				/>
-				<Route path="/staff-directory" element={<StaffDirectory />} />
-				<Route path="/tender" element={<Tender />} />
-				<Route path="/news" element={<News />} />
+				<Route
+					path="/staff-directory"
+					element={
+						<Layout>
+							<StaffDirectory />
+						</Layout>
+					}
+				/>
+				<Route
+					path="/tender"
+					element={
+						<Layout>
+							<Tender />
+						</Layout>
+					}
+				/>
+				<Route
+					path="/news"
+					element={
+						<Layout>
+							<News />
+						</Layout>
+					}
+				/>
 				<Route
 					path="/news-and-announcements"
-					element={<NewsAndAnnouncements />}
+					element={
+						<Layout>
+							<NewsAndAnnouncements />
+						</Layout>
+					}
+				/>
+				<Route
+					path="/games-sports"
+					element={
+						<Layout>
+							<GamesSports />
+						</Layout>
+					}
+				/>
+				<Route
+					path="/library"
+					element={
+						<Layout>
+							<Library />
+						</Layout>
+					}
+				/>
+				<Route
+					path="/accommodation"
+					element={
+						<Layout>
+							<Accommodation />
+						</Layout>
+					}
+				/>
+				<Route
+					path="/services"
+					element={
+						<Layout>
+							<Services/>
+						</Layout>
+					}
+				/>
+				<Route
+					path="/admission-policy"
+					element={
+						<Layout>
+							<AdmissionPolicy/>
+						</Layout>
+					}
+				/>
+				<Route
+					path="/fee-structure"
+					element={
+						<Layout>
+							<FeeStruture/>
+						</Layout>
+					}
 				/>
 				<Route path="*" element={<ErrorPage />} />
 			</Routes>
-
-			{/* placing footer */}
-			<Footer />
 		</Router>
 	);
 };
-
 export default App;

@@ -1,5 +1,8 @@
-import { FaAngleRight } from "react-icons/fa";
+import { FaAngleRight,FaGithub,FaWhatsapp} from "react-icons/fa";
+import {HiMail} from "react-icons/hi";
+import {AiOutlineLink} from "react-icons/ai";
 import React, { useState } from "react";
+
 
 const staff = [
   "karma",
@@ -13,7 +16,9 @@ const staff = [
 ];
 
 const StaffDirectory = () => {
-	const [directoryName, setDirectoryName]=useState("Civil Engineering Department");
+  const [directoryName, setDirectoryName] = useState(
+    "Civil Engineering Department"
+  );
   return (
     <div className="flex">
       {/* this is where sidebar starts */}
@@ -26,35 +31,58 @@ const StaffDirectory = () => {
           >
             <FaAngleRight />
           </label>
-		<div className="flex">
-          <div className=" grid-row bg-gray-100 h-20 md:h-[70%] w-[90vw] md:w-20 mt-[-650px] ml-[-15px] md:mt-[0px] md:ml-[18px] p-[5px] rounded-xl flex md:flex-col gap-3 overflow-scroll scrollbar-hide">
-            {staff.map((data, key) => {
-              return (
-                <div
-                  className="avatar w-[70px] rounded-full flex justify-center hover:scale-[120%] ease-out duration-300 "
-                  key={data}
-                >
-                  <div className="w-9/10 h-[90%] rounded-full tooltip tooltip-right">
+
+          <div className="flex flex-col md:flex-row ">
+            {/*  */}
+            <div className="flex md:flex-col bg-gray-100 h-20 w-[90vw] md:h-[500px] md:w-20 mt-10  ml-[-15px]  md:ml-[18px] p-[5px] rounded-xl  gap-3 overflow-scroll scrollbar-hide">
+              {staff.map((data, key) => {
+                return (
+                  <div
+                    className="avatar w-[70px] rounded-full flex justify-center hover:scale-[120%] ease-out duration-300 "
+                    key={data}
+                  >
+                    <div className="w-9/10 h-[90%] rounded-full tooltip tooltip-right">
+                      <img
+                        className="object-cover"
+                        src={require("../assets/images/download.jpeg")}
+                        alt="profilePic"
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/*card about staff intro  */}
+            <div className=" h-[100%] w-[70vw] flex flex-col items-center pt-10 md:-mt-[130px] md:ml-0 mx-auto">
+              <h1 className="md:text-[2rem] text-[1.75rem] font-semibold">Staff Directory</h1>
+              <h2 className="md:text-[1.75rem] text-[1.25rem] text-gray-400 font-medium">
+                {directoryName}
+              </h2>
+              <div className="flex flex-col items-center justify-center my-[50px] ">
+                <div className="card w-96 bg-base-100 shadow-xl image-full">
+                  <figure>
                     <img
-                      className="object-cover"
                       src={require("../assets/images/download.jpeg")}
-					  alt="profilePic"
+                      alt="staff_picture"
                     />
+                  </figure>
+                  <div className="card-body mt-[80%] ">
+                    <h2 className="font-semibold text-xl ml-[13%]">{"Karma delma"}</h2>
+                    <p className="font-normal ml-[13%]">{"Assistant Professor"}</p>
+                    <ul className="flex text-3xl justify-evenly">
+                    <li><HiMail className="hover:text-sky-500 hover:scale-[120%] transition ease-in delay-200"/></li>
+                    <li><FaWhatsapp className="hover:text-[#25D366] hover:scale-[120%] transition ease-in delay-200"/></li>
+                    <li><FaGithub className="hover:text-gray-700 hover:scale-[120%] hover:bg-white rounded-2xl transition ease-in delay-200"/></li>
+                    <li><AiOutlineLink className="hover:text-sky-500 hover:scale-[120%] transition ease-in delay-200"/></li>
+                    </ul>
+                    
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            </div>
+
           </div>
-
-		 <div className="bg-[#eee] h-[100%] w-[70vw] flex flex-col items-center pt-10 md:mt-0 md:ml-0">
-			<h1 className="text-[2rem] font-semibold" >Staff Directory</h1>
-			<h2 className="text-[1.75rem] text-gray-400 font-medium">{directoryName}</h2>
-
-		 </div>
-			</div>  
-
-
-
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer" className="drawer-overlay"></label>
@@ -95,7 +123,7 @@ const StaffDirectory = () => {
           </ul>
         </div>
       </div>
-      {/* this is where sidebar ends */ }
+      {/* this is where sidebar ends */}
     </div>
   );
 };

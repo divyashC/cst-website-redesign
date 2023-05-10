@@ -6,7 +6,7 @@ const SideNav = ({ isSideNavOpen, toggleSideNav }) => {
 	let iconStyles = { color: "white", fontSize: "115px", fontWeight: "bold" };
 	return (
 		<div
-			className={`fixed top-0 right-0 z-50 w-9/12 h-screen bg-gray-800 opacity-80 md:w-6/12 lg:w-3/12 ${
+			className={`fixed  top-0 right-0 z-50 w-9/12 h-screen bg-gray-800 opacity-80 md:w-6/12 lg:w-3/12 transition ease-in delay-300 ${
 				isSideNavOpen ? "" : "hidden"
 			}`}
 		>
