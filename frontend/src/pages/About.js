@@ -1,7 +1,7 @@
 import React from "react";
 import HeaderImg from "../assets/images/about-header.png";
 import VisionImg from "../assets/images/about-vision.png";
-import MissionCard from "../components/AboutPage/VisionCard";
+import MissionCard from "../components/AboutPage/MissionCard";
 
 const mission_data = [
 	{
