@@ -3,6 +3,7 @@ import bgDepartment from "../assets/images/bg-department.png"; // import your he
 import DofSH from "../assets/images/DofSH.jpg";
 
 
+
 const departments=[
   "Department of Information Technology",
   "Department of Science and Humanities",
@@ -12,8 +13,12 @@ const departments=[
 ];
 
 const programme=[
-  "Engineering Geology",
-  "lorem ipsum"
+{program: "Engineering Geology", pl: "Jane"},
+{program: "program2", pl: "John"},
+]
+
+const profile=[
+  {name: "Jane Doe", des:"Head of Department, Science and Humanities", num:"17111111", email: "jane.cst@rub.edu.bt"}
 ]
 
 const Academics = () => {
@@ -61,16 +66,25 @@ const Academics = () => {
             </div>
           </div>
         </div>
+        <div className="flex justify-center">
+          <hr className="w-4/5 border-t border-gray-400 my-4" />
+        </div>
         <div className="mb-20">
-          <h1 className="md:text-2xl lg:text-4xl text-center">Programs Offered</h1>
+          <h1 className="md:text-2xl lg:text-4xl text-center mb-6">Programs Offered</h1>
           <div className="overflow-x-auto content-center flex justify-center">
             <table className="table table-zebra w-full mx-auto text-center max-w-4xl">
+              <thead>
+                <td></td>
+                <td>Programme</td>
+                <td>Programme Leader</td>
+              </thead>
               <tbody>
                 {programme.map((val,index)=>{
                   return(
                     <tr key={index}>
-                      <th>{index+1}</th>
-                      <td>{val}</td>
+                      <th>{index}</th>
+                      <td>{val.program}</td>
+                      <td>{val.pl}</td>
                     </tr>
                   );
                 })}
@@ -78,12 +92,22 @@ const Academics = () => {
             </table>
           </div>
         </div>
-        <div>
-          <div className="hero-content flex-col lg:flex-row-reverse ml-10">
-              <img src={require("../assets/images/download.jpeg")} className="w-24 rounded-lg shadow-2xl" />
-              <div>
-                <p className="py-6 mr-10">Pema</p>
-              </div>
+        <div className="flex justify-center">
+          <hr className="w-4/5 border-t border-gray-400 my-4" />
+        </div>
+        <div className=" flex justify-center mb-8">
+          <div className="card card-side bg-base-100 shadow-xl">
+            <figure><img src={require("../assets/images/download.jpeg")} className="w-28 h-36 rounded-lg shadow-2xl" alt="Movie"/></figure>
+              {profile.map((val,index)=>{
+                return(
+                  <div className="card-body">
+                    <h2 className="card-title">{val.name}</h2>
+                    <p>{val.des}</p>
+                    <p>{val.num}</p>
+                    <p>{val.email}</p>
+                  </div>
+                );
+              })}
           </div>
         </div>
       </div>

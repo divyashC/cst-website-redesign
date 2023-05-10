@@ -10,6 +10,7 @@ import Downloads from "./pages/Downloads";
 import Events from "./pages/Events";
 import LifeAtCST from "./pages/LifeAtCST";
 import ResearchAndServices from "./pages/ResearchAndServices";
+import Services from "./pages/Services";
 import StaffDirectory from "./pages/StaffDirectory";
 import Tender from "./pages/Tender";
 import News from "./pages/News";
@@ -18,6 +19,9 @@ import ErrorPage from "./pages/Error";
 import GamesSports from "./pages/GamesSports";
 import Library from "./pages/Library";
 import Accommodation from "./pages/Accommodation";
+import FeeStruture from "./pages/FeeStruture";
+import AdmissionPolicy from "./pages/AdmissionPolicy";
+
 
 const Layout = ({ children }) => {
 	return (
@@ -150,6 +154,30 @@ const App = () => {
 					element={
 						<Layout>
 							<Accommodation />
+						</Layout>
+					}
+				/>
+				<Route
+					path="/services"
+					element={
+						<Layout>
+							<Services/>
+						</Layout>
+					}
+				/>
+				<Route
+					path="/admission-policy"
+					element={
+						<Layout>
+							<AdmissionPolicy/>
+						</Layout>
+					}
+				/>
+				<Route
+					path="/fee-structure"
+					element={
+						<Layout>
+							<FeeStruture/>
 						</Layout>
 					}
 				/>
