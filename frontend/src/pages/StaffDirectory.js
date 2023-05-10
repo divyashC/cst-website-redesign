@@ -31,8 +31,10 @@ const StaffDirectory = () => {
           >
             <FaAngleRight />
           </label>
+
           <div className="flex flex-col md:flex-row ">
-            <div className=" bg-gray-100 h-20 md:h-[500px] w-[90vw] md:w-20 mt-0 ml-[-15px]  md:ml-[18px] p-[5px] rounded-xl flex md:flex-col gap-3 overflow-scroll scrollbar-hide">
+            {/*  */}
+            <div className="flex md:flex-col bg-gray-100 h-20 w-[90vw] md:h-[500px] md:w-20 mt-10  ml-[-15px]  md:ml-[18px] p-[5px] rounded-xl  gap-3 overflow-scroll scrollbar-hide">
               {staff.map((data, key) => {
                 return (
                   <div
@@ -51,9 +53,10 @@ const StaffDirectory = () => {
               })}
             </div>
 
+            {/*card about staff intro  */}
             <div className=" h-[100%] w-[70vw] flex flex-col items-center pt-10 md:-mt-[130px] md:ml-0 mx-auto">
-              <h1 className="text-[2rem] font-semibold">Staff Directory</h1>
-              <h2 className="text-[1.75rem] text-gray-400 font-medium">
+              <h1 className="md:text-[2rem] text-[1.75rem] font-semibold">Staff Directory</h1>
+              <h2 className="md:text-[1.75rem] text-[1.25rem] text-gray-400 font-medium">
                 {directoryName}
               </h2>
               <div className="flex flex-col items-center justify-center my-[50px] ">
