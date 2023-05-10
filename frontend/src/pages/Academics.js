@@ -25,7 +25,7 @@ const Academics = () => {
   return (
   <div>
       <div className="hero-section relative h-[400px]" style={{backgroundImage:`url(${bgDepartment})`}}>
-        <div className="absolute top-0 left-0 h-full w-full bg-black opacity-50"></div>
+        <div className="absolute top-0 left-0 h-full w-full bg-black opacity-40"></div>
         <div className="  transform text-center z-10 flex justify-center items-center pt-10">
           <p className="text-white text-[4rem] font-bold mt-[15%] p-4 text-right">
             Department
