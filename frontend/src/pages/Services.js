@@ -8,8 +8,7 @@ import {
 import ServiceImg from "../assets/images/services-header.jpg";
 import { SiAcm } from "react-icons/si";
 import { IoIosPeople } from "react-icons/io";
-import { BsCameraReels, BsJournalBookmark } from "react-icons/bs";
-import { TbPlant2 } from "react-icons/tb";
+import { BsCameraReels} from "react-icons/bs";
 
 const clubs = [
   { name: "ICT Services", icon: <SiAcm /> },
@@ -22,36 +21,32 @@ const clubs = [
 const Services = () => {
   return (
     <div>
-      <div className="relative">
-        <img src={ServiceImg} alt="Header" className=" w-full h-[450px]" />
+      <div className="min-h-[500px] relative" >
+      {/* discard
+      style={{background:`url(${ServiceImg})`, backgroundPosition:'center', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundAttachment:'fixed'}} */}
+        <img src={ServiceImg} alt="Header" className="w-full h-[500px]" />
         <div className="absolute top-0 left-0 h-full w-full bg-black opacity-30"></div>
         <div className="absolute left-0 px-20 py-10 text-white bottom-5">
-          <h1 className="text-5xl font-bold">Library</h1>
-          <p className="mt-4 text-2xl">
-            The CST Library has a good collection of books, journals, and
-            magazines from different disciplines. The International and National
-            Newspapers are also available. The library management system KOHA
-            has been installed and is being implemented. Students can access it
-            through the LAN.
-          </p>
-        </div>
+          <h1 className="text-3xl sm:text-5xl font-bold">Service and Facilities</h1>
+      </div>
       </div>
 
       <div>
         <div className="flex">
           {/* this is where sidebar starts */}
-          <div className="drawer drawer-mobile scrollbar-hide">
+          <div className="drawer drawer-mobile">
             <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex justify-start items-center ">
+            <div className="drawer-content flex justify-start items-center scrollbar-hide">
               <label
                 htmlFor="my-drawer"
                 className="bg-white mt-[200px] ml-[-10px] text-black rounded-r-lg btn top-[100px] hover:text-white hover:bg-slate-400 lg:hidden"
               >
                 <FaAngleRight />
               </label>
-              <div className="flex flex-col  rounded-lg p-5 gap-3 scrollbar-hide bg-gray-200 h-full">
+              <div className="h-full">
+              <div className="flex flex-col rounded-lg p-5 gap-3 scrollbar-hide bg-gray-200 h-auto my-10">
                 {/*here we are supposed to put the content  */}
-                <h1 className="text-2xl font-semibold ml-5 text-left ">ICT Services</h1>
+                <h1 className="text-2xl font-semibold ml-5 text-left">ICT Services</h1>
                 <div className="w-[70vw] h-auto bg-white p-10">
                   <div className="mb-10">
                     <hr className="w-full border-t border-gray-400 my-4" />
@@ -115,12 +110,13 @@ const Services = () => {
                   </div>
                 </div>
               </div>
+              </div>
             </div>
             <div className="drawer-side">
               <label htmlFor="my-drawer" className="drawer-overlay"></label>
               <ul className="menu p-4 w-80 bg-base-100 text-base-content ">
-                <h1 className=" text-[1.75rem] font-bold pb-5">
-                  Clubs and Societies
+                <h1 className=" text-[1.75rem] font-bold pb-5 flex justify-center">
+                  Services
                 </h1>
                 {clubs.map((val, index) => {
                   return (
