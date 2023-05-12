@@ -25,13 +25,14 @@ const Academics = () => {
   return (
   <div>
       <div className="hero-section relative h-[400px]" style={{backgroundImage:`url(${bgDepartment})`}}>
-        <div className="absolute top-0 left-0 h-full w-full bg-black opacity-50"></div>
+        <div className="absolute top-0 left-0 h-full w-full bg-black opacity-40"></div>
         <div className="  transform text-center z-10 flex justify-center items-center pt-10">
-          <p className="text-white text-[4rem] font-bold mt-[15%] p-4 text-right">
+          <p className="text-white text-[4rem] font-bold mt-[15%] p-4 text-right xl:mt-[10%] md:block hidden">
             Department
           </p>
-          <div className="h-72 w-2 bg-white mb-2 self-center"></div>
-          <div className="flex flex-col justify-evenly items-center ml-7 text-left leading-loose h-[300px]">
+          <div className="h-72 w-2 bg-white mb-2 self-center hidden md:block"></div>
+          <div className="flex flex-col justify-evenly items-center ml-7 text-left leading-loose h-[300px] ">
+            <p className="text-white font-bold text-3xl mb-5 block md:hidden">Departments</p>
             <ul className="list-none ">
               {departments.map((val,index)=>{
 				  			return(
@@ -47,11 +48,11 @@ const Academics = () => {
       </div>
       <div>
         <h1 className="mt-20 mb-10 text-center md:text-2xl  lg:text-4xl font-bold"> Department of Science and Humanities</h1>
-        <div className="mx-20 min-h-screen ">
-          <div className="hero-content flex-col lg:flex-row-reverse ml-10">
-            <img src={DofSH} className="max-w-sm rounded-lg shadow-2xl" />
+        <div className="flex justify-around items-start ">
+          <div className="hero-content flex-col lg:flex-row-reverse mx-auto">
+            <img src={DofSH} className="xs:w-[30%] rounded-lg shadow-2xl w-[300px]" />
             <div>
-              <p className="py-6 mr-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+              <p className="py-6 text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
               magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
               consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
               Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborumSed 
@@ -72,7 +73,7 @@ const Academics = () => {
         <div className="mb-20">
           <h1 className="md:text-2xl lg:text-4xl text-center mb-6">Programs Offered</h1>
           <div className="overflow-x-auto content-center flex justify-center">
-            <table className="table table-zebra w-full mx-auto text-center max-w-4xl">
+            <table className="table table-zebra w-[90%] mx-auto text-center max-w-4xl">
               <thead>
                 <td></td>
                 <td>Programme</td>
@@ -95,12 +96,12 @@ const Academics = () => {
         <div className="flex justify-center">
           <hr className="w-4/5 border-t border-gray-400 my-4" />
         </div>
-        <div className=" flex justify-center mb-8">
-          <div className="card card-side bg-base-100 shadow-xl">
-            <figure><img src={require("../assets/images/download.jpeg")} className="w-28 h-36 rounded-lg shadow-2xl" alt="Movie"/></figure>
+        <div className=" flex justify-center mb-5 ">
+          <div className="card card-side w-[80vw] sm:w-[400px] flex-col sm:flex-row bg-base-300 shadow-xl">
+            <figure><img src={require("../assets/images/download.jpeg")} className="w-[90%] h-[90%] sm:h-[60%] rounded-lg ml-3 mt-3" alt="Movie"/></figure>
               {profile.map((val,index)=>{
                 return(
-                  <div className="card-body">
+                  <div className=" flex flex-col justify-center items-start pl-4 mb-7 sm:mb-0">
                     <h2 className="card-title">{val.name}</h2>
                     <p>{val.des}</p>
                     <p>{val.num}</p>

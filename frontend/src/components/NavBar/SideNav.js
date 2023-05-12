@@ -18,32 +18,32 @@ const SideNav = ({ isSideNavOpen, toggleSideNav }) => {
 				/>
 			</i>
 
-			<ul className="mt-20 ml-8 text-xl text-white md:text-2xl lg:text-3xl md:mt-28 lg:mt-36 md:ml-10 lg:ml-12">
-				<li className="mb-4 md:mb-6 lg:mb-8">
+			<ul className="mt-20 ml-8 text-xl text-white md:text-2xl lg:text-3xl md:mt-28 lg:mt-36 md:ml-10 lg:ml-12 ">
+				<li className="mb-[3%]">
 					<Link to="/">Home</Link>
 				</li>
-				<li className="mb-4 md:mb-6 lg:mb-8">
+				<li className="mb-[3%]">
 					<Link to="/about">About Us</Link>
 				</li>
-				<li className="mb-4 md:mb-6 lg:mb-8">
+				<li className="mb-[3%]">
 					<Link to="/programmes">Programmes</Link>
 				</li>
-				<li className="mb-4 md:mb-6 lg:mb-8">
+				<li className="mb-[3%]">
 					<Link to="/academics">Academics</Link>
 				</li>
-				<li className="mb-4 md:mb-6 lg:mb-8">
+				<li className="mb-[3%]">
 					<Link to="/news">News &amp; Announcements</Link>
 				</li>
-				<li className="mb-4 md:mb-6 lg:mb-8">
+				<li className="mb-[3%]">
 					<Link to="/research-and-services">Research &amp; Services</Link>
 				</li>
-				<li className="mb-4 md:mb-6 lg:mb-8">
+				<li className="mb-[3%]">
 					<Link to="/life-at-cst">Life at CST</Link>
 				</li>
-				<li className="mb-4 md:mb-6 lg:mb-8">
+				<li className="mb-[3%]">
 					<Link to="/connect">Connect</Link>
 				</li>
-				<li className="mb-4 md:mb-6 lg:mb-8">
+				<li className="mb-[3%]">
 					<Link to="/others">Others</Link>
 				</li>
 			</ul>
