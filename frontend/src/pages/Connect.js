@@ -38,7 +38,7 @@ const data = [
 const Connect = () => {
   return (
     <div className="flex flex-col content-center items-center py-10">
-      <h1 className="text-[2.5rem] my-10">Frequently Asked Questions</h1>
+      <h1 className="text-[1.75rem] md:text-[2.5rem] font-bold my-10">Frequently Asked Questions</h1>
       <div className="w-[90%] bg-[#EBF3F6] flex flex-col justify-center content-center p-10 rounded-md gap-4">
         {data.map((data, key) => {
           return <Questions question={data.q} answer={data.a} />;
