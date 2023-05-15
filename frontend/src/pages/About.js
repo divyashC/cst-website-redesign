@@ -37,37 +37,42 @@ const About = () => {
 		<div className="bg-white">
 			<div className="relative">
 				<img src={HeaderImg} alt="Header" />
-				<h1 className="absolute bottom-0 left-0 px-20 py-10 text-5xl font-bold text-white">
+				<h1 className="absolute bottom-0 left-0 px-6 py-3 text-2xl font-bold text-white md:px-20 md:py-10 md:text-5xl">
 					About CST
 				</h1>
 			</div>
 
-			<div className="container flex flex-col items-center justify-center py-16 mx-auto md:flex-row">
-				<img src={VisionImg} alt="Vision" className="w-1/3 mr-20" />
-				<div className="relative py-8 md:w-1/2">
-					<h2 className="text-3xl font-bold text-black md:text-5xl">
-						<span className="absolute -left-6 -top-8 text-[#5E89A1] text-[200px] font-serif">
+			<div className="container flex flex-col items-center justify-center py-8 mx-auto md:flex-row">
+				<img
+					src={VisionImg}
+					alt="Vision"
+					className="w-1/2 md:mr-10 lg:mr-10 md:w-1/3 lg:w-1/4"
+				/>
+				<div className="relative py-4 md:w-1/2">
+					<h2 className="text-2xl font-bold text-center text-black md:text-left md:text-5xl">
+						<span className="absolute -left-3 -top-2 text-[#5E89A1] text-[100px] font-serif hidden sm:inline-block">
 							“
 						</span>
 						<span className="relative inline-block">Our Vision</span>
 					</h2>
-					<p className="my-8 text-5xl text-[#08679F] leading-normal">
+
+					<p className="my-4 text-xl text-[#08679F] leading-[2rem] px-10 lg:text-5xl lg:leading-[4rem] md:text-3xl md:leading-[2.5rem]">
 						A centre of excellence in science and technology enriched with GNH
 						values
 					</p>
 				</div>
 			</div>
 
-			<div className="relative mx-32 mt-10 mb-9 md:w-1/2">
-				<h2 className="text-3xl font-bold text-black md:text-5xl">
-					<span className="absolute -left-6 top-[-60px] text-[#5E89A1] text-[200px] font-serif">
+			<div className="relative mx-24 my-6 md:w-1/2">
+				<h2 className="text-2xl font-bold text-center text-black md:text-left md:text-5xl lg:ml-28">
+					<span className="absolute lg:left-24 top-[-25px] text-[#5E89A1] text-[100px] font-serif hidden sm:inline-block md:-left-5">
 						“
 					</span>
 					<span className="relative inline-block">Our Mission</span>
 				</h2>
 			</div>
 
-			<div className="flex flex-wrap items-center justify-center gap-8 pb-20">
+			<div className="flex flex-col flex-wrap items-center justify-center gap-4 mb-10 lg:items-center lg:justify-center lg:gap-10 lg:flex-row md:flex-row">
 				{mission_data.map((item, index) => (
 					<MissionCard
 						key={index}
