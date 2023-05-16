@@ -14,13 +14,15 @@ const Card = ({ title, icon, description }) => {
 	};
 
 	return (
-		<div className="w-1/3">
+		<div className="flex w-4/5 md:w-1/3">
 			<div className="w-full bg-white rounded-lg shadow-md aspect-w-1 aspect-h-1">
-				<div className="flex p-4">
+				<div className="flex flex-col-reverse p-4 lg:flex-row">
 					<h2 className="flex-grow font-bold text-black">{title}</h2>
-					<div className="pl-10 pr-5">{icons[icon]}</div>
+					<div className="hidden pl-10 pr-5 lg:block md:block">
+						{icons[icon]}
+					</div>
 				</div>
-				<div className="p-4 text-gray-600">
+				<div className="hidden p-4 text-gray-600 lg:block">
 					<p>{description}</p>
 				</div>
 			</div>

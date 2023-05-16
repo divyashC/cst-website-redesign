@@ -3,6 +3,9 @@
 	padding: 0;
 	background-color: #03396c;
 } */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .editorial {
 	display: block;
