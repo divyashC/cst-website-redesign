@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Academics from "./pages/Academics";
 import Connect from "./pages/Connect";
+import Crsed from "./pages/Crsed";
 import Downloads from "./pages/Downloads";
 import Events from "./pages/Events";
 import LifeAtCST from "./pages/LifeAtCST";
@@ -101,6 +102,11 @@ const App = () => {
 						</Layout>
 					}
 				/>
+					<Route path="/research-and-services/crsed" element={
+						<Layout>
+							<Crsed/>
+						</Layout>
+					}/>
 				<Route
 					path="/staff-directory"
 					element={
@@ -161,7 +167,7 @@ const App = () => {
 					path="/services"
 					element={
 						<Layout>
-							<Services/>
+							<Services />
 						</Layout>
 					}
 				/>
@@ -169,7 +175,7 @@ const App = () => {
 					path="/admission-policy"
 					element={
 						<Layout>
-							<AdmissionPolicy/>
+							<AdmissionPolicy />
 						</Layout>
 					}
 				/>
@@ -177,7 +183,7 @@ const App = () => {
 					path="/fee-structure"
 					element={
 						<Layout>
-							<FeeStruture/>
+							<FeeStruture />
 						</Layout>
 					}
 				/>
