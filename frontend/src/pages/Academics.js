@@ -36,7 +36,7 @@ const Academics = () => {
             <ul className="list-none ">
               {departments.map((val,index)=>{
 				  			return(
-				  				<li key={index} className="mb-4 text-white hover:text-gray-400 hover:underline underline-offset-8 hover:-ease-in duration-300"> 
+				  				<li key={index} className="mb-4 text-white hover:py-4 px-4 rounded-lg hover:bg-gray-400 bg-opacity-30 hover:text-white transition duration-300"> 
 				  				  {" "}
 				  				  <button className=" w-30 hover:h-15 hover:border border-collspse">
                       <a href=" " className="text-xl font-medium">{val}</a>
