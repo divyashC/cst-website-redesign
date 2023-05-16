@@ -142,7 +142,7 @@ const Downloads = () => {
       <h1 className="text-[2.5rem] my-10 font-bold">Downloads</h1>
       <div className="w-[90%] bg-[#EBF3F6] flex flex-col justify-center content-center p-10 rounded-md gap-4">
         {data.map((data, key) => {
-          return <Dropdown mainmenu={data.main} option={data.opt} />;
+          return <Dropdown mainmenu={data.main} option={data.opt}/>;
         })}
       </div>
     </div>
@@ -158,7 +158,7 @@ const Dropdown = ({ mainmenu, option }) => {
         <div className="collapse-content">
 			<div className="flex flex-col gap-3 px-10">
 				{option.map((data, key) => {
-        		  return  <a href=" " key={key} className="border-t-2 pt-3"> {data}</a>;
+        		  return  <a href=" " key={key} className="border-t-2 pt-3 hover:text-blue-800 hover:text-lg"> {data}</a>;
         		})}
 			</div>
         </div>
