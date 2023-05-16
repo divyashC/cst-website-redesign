@@ -36,11 +36,9 @@ const Academics = () => {
             <ul className="list-none ">
               {departments.map((val,index)=>{
 				  			return(
-				  				<li key={index} className="mb-4 text-white hover:py-4 px-4 rounded-lg hover:bg-gray-400 bg-opacity-30 hover:text-white transition duration-300"> 
+				  				<li key={index} className="mb-4 text-white hover:py-4 px-4 hover:underline underline-offset-8 hover:bg-black hover:bg-opacity-40 hover:text-white hover:break-after-left hover:ease-in transition-all duration-300"> 
 				  				  {" "}
-				  				  <button className=" w-30 hover:h-15 hover:border border-collspse">
                       <a href=" " className="text-xl font-medium">{val}</a>
-                    </button>
 				  				</li>
 				  			);
 				  		})}
