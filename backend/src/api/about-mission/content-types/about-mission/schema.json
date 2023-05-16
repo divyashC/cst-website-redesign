@@ -4,7 +4,7 @@
   "info": {
     "singularName": "about-mission",
     "pluralName": "about-missions",
-    "displayName": "About-Mission"
+    "displayName": "about-mission"
   },
   "options": {
     "draftAndPublish": true
@@ -12,13 +12,13 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "text"
+      "type": "string"
     },
     "icon": {
       "type": "string"
     },
     "description": {
-      "type": "text"
+      "type": "string"
     }
   }
 }
