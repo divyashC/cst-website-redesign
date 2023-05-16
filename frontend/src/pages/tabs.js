@@ -1,71 +1,78 @@
 import React from 'react'
-// import { Button } from "@/components/ui/button"
-// import {
-//   Card,
-//   CardContent,
-//   CardDescription,
-//   CardFooter,
-//   CardHeader,
-//   CardTitle,
-// } from "@/components/ui/card"
-// import { Input } from "@/components/ui/input"
-// import { Label } from "@/components/ui/label"
-// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useState } from "react";
 
-export function TabsDemo() {
+function Tabs() {
+  const [toggleState, setToggleState] = useState(1);
+
+  const toggleTab = (index) => {
+    setToggleState(index);
+  };
+
   return (
-    // <Tabs defaultValue="account" className="w-[400px]">
-    //   <TabsList className="grid w-full grid-cols-2">
-    //     <TabsTrigger value="account">Account</TabsTrigger>
-    //     <TabsTrigger value="password">Password</TabsTrigger>
-    //   </TabsList>
-    //   <TabsContent value="account">
-    //     <Card>
-    //       <CardHeader>
-    //         <CardTitle>Account</CardTitle>
-    //         <CardDescription>
-    //           Make changes to your account here. Click save when you're done.
-    //         </CardDescription>
-    //       </CardHeader>
-    //       <CardContent className="space-y-2">
-    //         <div className="space-y-1">
-    //           <Label htmlFor="name">Name</Label>
-    //           <Input id="name" defaultValue="Pedro Duarte" />
-    //         </div>
-    //         <div className="space-y-1">
-    //           <Label htmlFor="username">Username</Label>
-    //           <Input id="username" defaultValue="@peduarte" />
-    //         </div>
-    //       </CardContent>
-    //       <CardFooter>
-    //         <Button>Save changes</Button>
-    //       </CardFooter>
-    //     </Card>
-    //   </TabsContent>
-    //   <TabsContent value="password">
-    //     <Card>
-    //       <CardHeader>
-    //         <CardTitle>Password</CardTitle>
-    //         <CardDescription>
-    //           Change your password here. After saving, you'll be logged out.
-    //         </CardDescription>
-    //       </CardHeader>
-    //       <CardContent className="space-y-2">
-    //         <div className="space-y-1">
-    //           <Label htmlFor="current">Current password</Label>
-    //           <Input id="current" type="password" />
-    //         </div>
-    //         <div className="space-y-1">
-    //           <Label htmlFor="new">New password</Label>
-    //           <Input id="new" type="password" />
-    //         </div>
-    //       </CardContent>
-    //       <CardFooter>
-    //         <Button>Save password</Button>
-    //       </CardFooter>
-    //     </Card>
-    //   </TabsContent>
-    // </Tabs>
-    <div></div>
-  )
+    <div className="container">
+      <div className="bloc-tabs">
+        <button
+          className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
+          onClick={() => toggleTab(1)}
+        >
+          Tab 1
+        </button>
+        <button
+          className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
+          onClick={() => toggleTab(2)}
+        >
+          Tab 2
+        </button>
+        <button
+          className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
+          onClick={() => toggleTab(3)}
+        >
+          Tab 3
+        </button>
+      </div>
+
+      <div className="content-tabs">
+        <div
+          className={toggleState === 1 ? "content  active-content" : "content"}
+        >
+          <h2>Content 1</h2>
+          <hr />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+            praesentium incidunt quia aspernatur quasi quidem facilis quo nihil
+            vel voluptatum?
+          </p>
+        </div>
+
+        <div
+          className={toggleState === 2 ? "content  active-content" : "content"}
+        >
+          <h2>Content 2</h2>
+          <hr />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+            voluptatum qui adipisci.
+          </p>
+        </div>
+
+        <div
+          className={toggleState === 3 ? "content  active-content" : "content"}
+        >
+          <h2>Content 3</h2>
+          <hr />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos sed
+            nostrum rerum laudantium totam unde adipisci incidunt modi alias!
+            Accusamus in quia odit aspernatur provident et ad vel distinctio
+            recusandae totam quidem repudiandae omnis veritatis nostrum
+            laboriosam architecto optio rem, dignissimos voluptatum beatae
+            aperiam voluptatem atque. Beatae rerum dolores sunt.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 }
+
+export default Tabs;
+
