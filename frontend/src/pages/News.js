@@ -1,5 +1,6 @@
 import React from 'react';
 import NewsComponent from '../components/News/NewsCard';
+import NewsImg from "../assets/images/news-image.png";
 
 const dummyData = [
   {
@@ -38,18 +39,15 @@ const dummyData = [
 
 const NewsPage = () => {
   return (
-    <div className="flex flex-col h-screen bg-[#F4F4F4]">
-      {/* First div */}
-      {/* <div className="flex items-center justify-center h-1/3 bg-gray-300">
-        <div className="text-center">
-          <h1 className="text-5xl font-bold mb-4">News</h1>
-          <NewsComponent {...dummyData[0]} />
-        </div>
-      </div> */}
-	  
-	  
+      
+    <div className="flex flex-col h-[1000px] bg-[#F4F4F4]">
+      <div className="relative flex justify-center items-center h-[400px] w-auto" style={{backgroundImage:`url(${NewsImg})`,backgroundPosition:'center',backgroundSize:'cover'}} >
+				{/* <img className="w-[1919px] h-[400px]"src={NewsImg} alt="Header" /> */}
+				<h1 className="absolute top-50 left-50 px-20 py-10 text-5xl font-bold text-white">
+					NEWS
+				</h1>
+			</div>
 
-      {/* Second div */}
       <div className="flex-1 flex items-center ">
         <div className="flex-grow border-r-2 pr-8">
           {dummyData.slice(1, 3).map(data => <NewsComponent key={data.id} {...data} />)}
@@ -60,16 +58,6 @@ const NewsPage = () => {
         </div>
       </div>
 
-      {/* Third div */}
-      {/* <div className="flex items-center justify-center h-1/3 bg-gray-300">
-        <div className="text-center">
-          <NewsComponent {...dummyData[1]} />
-        </div>
-        <hr className="mx-8 border-gray-400 h-full" />
-        <div className="text-center">
-          <NewsComponent {...dummyData[2]} />
-        </div>
-      </div> */}
     </div>
   );
 };
