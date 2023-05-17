@@ -43,11 +43,11 @@ const Services = () => {
               >
                 <FaAngleRight />
               </label>
-              <div className="h-full">
+              <div className="h-full w-full">
               <div className="flex flex-col rounded-lg p-5 gap-3 scrollbar-hide bg-gray-200 h-auto my-10">
                 {/*here we are supposed to put the content  */}
                 <h1 className="text-2xl font-semibold ml-5 text-left">ICT Services</h1>
-                <div className="w-[70vw] h-auto bg-white p-10">
+                <div className="w-full h-auto bg-white p-10">
                   <div className="mb-10">
                     <hr className="w-full border-t border-gray-400 my-4" />
                     <h2 className="md:text-1xl lg:text-2xl font-bold my-3">

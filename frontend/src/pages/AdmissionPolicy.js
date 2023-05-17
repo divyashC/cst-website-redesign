@@ -4,6 +4,7 @@ const AdmissionPolicy = () => {
   return (
     <div>
       <h1 className="mt-20 mb-8 text-center md:text-2xl  lg:text-4xl font-bold"> Admission Policy</h1>
+      <p className="text-center text-1xl sm:text-2xl">Admission / 19 June 2019 / Hits: 13851</p>
       <div className="py-6 mx-32 text-justify">
       <p>The University seeks to admit all students to its tertiary education programmes that have a reasonable expectation of 
       completing their programme of study successfully, subject to the proviso that the University has the necessary 
