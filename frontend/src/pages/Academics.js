@@ -24,14 +24,14 @@ const profile=[
 const Academics = () => {
   return (
   <div>
-      <div className="hero-section relative h-[500px]" style={{backgroundImage:`url(${bgDepartment})`}}>
+      <div className="hero-section relative h-[400px]" style={{backgroundImage:`url(${bgDepartment})`}}>
         <div className="absolute top-0 left-0 h-full w-full bg-black opacity-40"></div>
         <div className="  transform text-center z-10 flex justify-center items-center pt-10">
           <p className="text-white text-[4rem] font-bold mt-[15%] p-4 text-right xl:mt-[10%] md:block hidden">
             Department
           </p>
           <div className="h-72 w-2 bg-white mb-2 self-center hidden md:block"></div>
-          <div className="flex flex-col justify-evenly items-center ml-7 text-left leading-loose h-[500px] ">
+          <div className="flex flex-col justify-evenly items-center ml-7 text-left leading-loose h-[300px] ">
             <p className="text-white font-bold text-3xl mb-5 block md:hidden">Departments</p>
             <ul className="list-none ">
               {departments.map((val,index)=>{
