@@ -17,7 +17,7 @@ const NewsComponent = ({ imageSrc, views, date, title, content }) => {
         </div>
         <div className="text-black font-medium">{title}</div>
         <div className="text-gray-600">{truncatedContent}<span className="text-darkgray-500">see more</span></div>
-      </div>
+      </div>    
     </div>
   );
 };
