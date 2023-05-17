@@ -30,3 +30,8 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+
+############################
+# Node Modules
+############################
+/node_modules
