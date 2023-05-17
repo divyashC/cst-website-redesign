@@ -19,6 +19,11 @@ const StaffDirectory = () => {
   const [directoryName, setDirectoryName] = useState(
     "Civil Engineering Department"
   );
+
+  const sideNavFunction = (data) => {
+    setDirectoryName(data);
+  };
+
   return (
     <div className="flex">
       {/* this is where sidebar starts */}
@@ -91,34 +96,34 @@ const StaffDirectory = () => {
             <h1 className=" text-[1.75rem] font-bold pb-5">Departments</h1>
             <li>
               {" "}
-              <a href=" ">Civil Engineering Department</a>
+              <p onClick={()=>{sideNavFunction("Civil Engineering Department")}} >Civil Engineering Department</p>
             </li>
             <li>
-              <a href=" ">Architecture Department</a>
+              <p onClick={()=>{sideNavFunction("Architecture Department")}} >Architecture Department</p>
             </li>
             <li>
-              <a href=" ">Electrical Engineering Department</a>
+              <p onClick={()=>{sideNavFunction("Electrical Engineering Department")}}>Electrical Engineering Department</p>
             </li>
             <li>
-              <a href=" ">ECE Department</a>
+              <p onClick={()=>{sideNavFunction("ECE Department")}}>ECE Department</p>
             </li>
             <li>
-              <a href=" ">IT Engineering Department</a>
+              <p onClick={()=>{sideNavFunction("IT Engineering Department")}}>IT Engineering Department</p>
             </li>
             <li>
-              <a href=" ">Science and Humanities Department</a>
+              <p onClick={()=>{sideNavFunction("Science and Humanities Department")}}>Science and Humanities Department</p>
             </li>
             <li>
-              <a href=" ">Finance and Accounts Section</a>
+              <p onClick={()=>{sideNavFunction("Finance and Accounts Section")}}>Finance and Accounts Section</p>
             </li>
             <li>
-              <a href=" ">Administration</a>
+              <p onClick={()=>{sideNavFunction("Administration")}}>Administration</p>
             </li>
             <li>
-              <a href=" ">Library</a>
+              <p  onClick={()=>{sideNavFunction("Library")}}>Library</p>
             </li>
             <li>
-              <a href=" ">ICT Unit</a>
+              <p onClick={()=>{sideNavFunction("ICT Unit")}}>ICT Unit</p>
             </li>
           </ul>
         </div>

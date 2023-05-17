@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Academics from "./pages/Academics";
 import Connect from "./pages/Connect";
 import Crsed from "./pages/Crsed";
+import Programmes from "./pages/Programmes";
 import Downloads from "./pages/Downloads";
 import Events from "./pages/Events";
 import LifeAtCST from "./pages/LifeAtCST";
@@ -83,6 +84,14 @@ const App = () => {
 					element={
 						<Layout>
 							<Events />
+						</Layout>
+					}
+				/>
+				<Route 
+					path="/programmes"
+					element={
+						<Layout>
+							<Programmes />
 						</Layout>
 					}
 				/>
