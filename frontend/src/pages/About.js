@@ -1,38 +1,33 @@
-import React from "react";
 import HeaderImg from "../assets/images/about-header.png";
 import VisionImg from "../assets/images/about-vision.png";
 import MissionCard from "../components/AboutPage/MissionCard";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-const mission_data = [
-	{
-		title:
-			"To generate new knowledge through research and innovation to fulfill the needs of the society",
-		icon: "GiBrain",
-		description:
-			"To generate new knowledge research will be conducted in collaboration with the industries, stake holders and international partners. The finding will be disseminated to the wider communities through publication and seminars to address the issues and problem in the society and to help economy at the large.",
-	},
-	{
-		title: "To provide community services to enhance GNH based society",
-		icon: "HiOutlineUserGroup",
-		description:
-			"To promote GNH base society college will initiate and organize awareness campaign, provide technical support and social activities to improve the living standard of the communities. The college will institute centre for value education to promote community services.",
-	},
-	{
-		title: "To collaborate with stakeholders and provide expert services",
-		icon: "GiDiscussion",
-		description:
-			"To enhance industry-academia relations, the college will continuously develop linkages with stakeholder within and outside country. provide consultancies and training’s (including tailor made) to support industries and other organizations with technical services, and to provide expert opinions in line with the changing needs to help industries in making appropriate decisions.",
-	},
-	{
-		title:
-			"To offer internationally recognized programs in science and technology",
-		icon: "GiGraduateCap",
-		description:
-			"The college will develop and offer program that are relevant and meets international standards, adopt best practices in teaching learning and research to ensure that the graduates are equipped for employment in international market and will have increase number of students pursuing masters in international colleges. In addition, there will be 5 to 10 percentage of international students and faculties and also international students and faculties will be invited to the college on exchange programs. The mechanism to facilitate credit transfer system will also be instituted.",
-	},
-];
+const api_token =
+	"a011c6bc3920f5046b16031c19216beba64cca2f4815f1d225e44e7601646b1e00c7d76b6dc0a15fc43da74a8b7619efcbeaaa0bb2a525983ac43c43580a03fc7423112c6462c902049b516f484e78c4eef140969f14ccc1be970885872619e120579a2d8cba9cf1754f7571ec8c407f8dedbd8f7454560747635f3020efae7e";
 
 const About = () => {
+	const [missionData, setMissionData] = useState([]);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await axios.get(
+					"http://localhost:1337/api/about-missions",
+					{
+						headers: {
+							Authorization: `Bearer ${api_token}`,
+						},
+					}
+				);
+				setMissionData(response.data.data);
+			} catch (error) {
+				console.error(error);
+			}
+		};
+		fetchData();
+	}, []);
 	return (
 		<div className="bg-white">
 			<div className="relative">
@@ -72,13 +67,13 @@ const About = () => {
 				</h2>
 			</div>
 
-			<div className="flex flex-col flex-wrap items-center justify-center gap-4 mb-10 lg:items-center lg:justify-center lg:gap-10 lg:flex-row md:flex-row">
-				{mission_data.map((item, index) => (
+			<div className="flex flex-col flex-wrap items-center justify-center gap-4 pb-10 lg:items-center lg:justify-center lg:gap-10 lg:flex-row md:flex-row">
+				{missionData.map((item) => (
 					<MissionCard
-						key={index}
-						title={item.title}
-						icon={item.icon}
-						description={item.description}
+						key={item.id}
+						title={item.attributes.title}
+						icon={item.attributes.icon}
+						description={item.attributes.description}
 					/>
 				))}
 			</div>
