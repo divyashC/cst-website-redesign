@@ -1,22 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import HeaderImg from "../assets/images/hostel-header.png";
 import SideImg from "../assets/images/temp/side-temp-hostel.jpg";
 import { BiWifi, BiBuildings } from "react-icons/bi";
 
-const card_data = [
-	{
-		title: "Wi-Fi",
-		icon: "BiWifi",
-		description:
-			"We provide free WiFi network in all the hostels, upgraded labs and computer network and infrastructure. We are proud of the range of facilities you have access to, both in and beyond the classroom.",
-	},
-	{
-		title: "Campus Facilities",
-		icon: "BiBuildings",
-		description:
-			"We have created a learning environment that will bring out the best of your abilities.",
-	},
-];
+const api_token =
+	"a011c6bc3920f5046b16031c19216beba64cca2f4815f1d225e44e7601646b1e00c7d76b6dc0a15fc43da74a8b7619efcbeaaa0bb2a525983ac43c43580a03fc7423112c6462c902049b516f484e78c4eef140969f14ccc1be970885872619e120579a2d8cba9cf1754f7571ec8c407f8dedbd8f7454560747635f3020efae7e";
 
 const Card = ({ title, icon, description }) => {
 	const icons = {
@@ -38,13 +27,33 @@ const Card = ({ title, icon, description }) => {
 };
 
 const Accommodation = () => {
+	const [cardData, setCardData] = useState([]);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await axios.get(
+					"http://localhost:1337/api/accomodation-card-datas",
+					{
+						headers: {
+							Authorization: `Bearer ${api_token}`,
+						},
+					}
+				);
+				setCardData(response.data.data);
+			} catch (error) {
+				console.error(error);
+			}
+		};
+		fetchData();
+	}, []);
 	return (
 		<div className="bg-white">
 			<div className="relative">
 				<img src={HeaderImg} alt="Header" />
 				<div className="absolute left-0 px-20 py-10 text-white bottom-5">
 					<h1 className="text-5xl font-bold">Accommodation</h1>
-					<p className="hidden lg:block mt-4 text-2xl">
+					<p className="hidden mt-4 text-2xl lg:block">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
 						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -55,20 +64,23 @@ const Accommodation = () => {
 				</div>
 			</div>
 
-			<div className="flex flex-col md:flex-row flex-wrap items-center md:items-stretch justify-center gap-8 my-20">
-				{card_data.map((item, index) => (
+			<div className="flex flex-col flex-wrap items-center justify-center gap-8 my-20 md:flex-row md:items-stretch">
+				{cardData.map((item, index) => (
 					<Card
 						key={index}
-						title={item.title}
-						icon={item.icon}
-						description={item.description}
+						title={item.attributes.title}
+						icon={item.attributes.icon}
+						description={item.attributes.description}
 					/>
 				))}
 			</div>
 
 			<div className="my-20 hero">
 				<div className="flex-col hero-content lg:flex-row-reverse">
-					<img src={SideImg} className="w-[90%] h-[400px] object-cover object-bottom lg:h-auto lg:max-w-md rounded-xl shadow-2xl" />
+					<img
+						src={SideImg}
+						className="w-[90%] h-[400px] object-cover object-bottom lg:h-auto lg:max-w-md rounded-xl shadow-2xl"
+					/>
 					<div>
 						<h1 className="text-5xl font-bold">Services</h1>
 						<p className="py-6">
@@ -89,7 +101,9 @@ const Accommodation = () => {
 				</div>
 			</div>
 
-			<h1 className="text-center lg:text-left lg:ml-20 mb-8 text-5xl font-bold">Hostel Blocks</h1>
+			<h1 className="mb-8 text-5xl font-bold text-center lg:text-left lg:ml-20">
+				Hostel Blocks
+			</h1>
 			<div className="mx-auto w-[95%] lg:w-[70%] pb-14">
 				<table className="table w-full">
 					<thead>
