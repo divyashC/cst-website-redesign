@@ -137,6 +137,7 @@
 
 
 import React from 'react';
+//import '../assets/css/organization-chart.css';
 
 const organizationData = {
   name: 'Director',
@@ -265,4 +266,3 @@ const Organization = () => {
 };
 
 export default Organization;
-
