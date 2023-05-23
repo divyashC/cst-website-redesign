@@ -45,7 +45,7 @@ const ResearchAndServices = () => {
 					Research and Services
 				</h1>
 	  </div>
-	<div className="bg-[##FFFFFF] m-10 ">
+	<div className="bg-[##FFFFFF] m-10">
 	<Slider {...settings}>
     <div className="mx-2 h-64 shadow-lg"><img className="w-full h-full object-cover"  src={image1} /></div>
     <div className="mx-2 h-64 shadow-lg"><img className="w-full h-full object-cover"  src={image2} /></div>
@@ -101,7 +101,6 @@ const ResearchAndServices = () => {
   </div>
 
 </div>
-
 
 <div className="container">
       <div className="bloc-tabs">
