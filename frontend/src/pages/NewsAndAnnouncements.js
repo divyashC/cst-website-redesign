@@ -74,7 +74,7 @@ const NewsPage = () => {
 
   const div3Title = div3Data.title;
   return (
-    <div className="container mx-auto h-[1500px] bg-white">
+    <div className=" mx-auto h-[1500px] bg-white">
       <div className="flex flex-col space-y-8">
         {/* Div 1 */}
         <div className="relative flex justify-center items-center h-[250px] w-auto" style={{backgroundImage:`url(${NewsImg})`,backgroundPosition:'center',backgroundSize:'cover'}} >
