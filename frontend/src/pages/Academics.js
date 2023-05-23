@@ -1,27 +1,72 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import bgDepartment from "../assets/images/bg-department.png"; // import your hero image here
 import DofSH from "../assets/images/DofSH.jpg";
 
 
+// const departments=[
+//   "Department of Information Technology",
+//   "Department of Science and Humanities",
+//   "Department of Civil",
+//   "Department of Electronics and Communication",
+//   "Department of Architecture"
+// ];
 
-const departments=[
-  "Department of Information Technology",
-  "Department of Science and Humanities",
-  "Department of Civil",
-  "Department of Electronics and Communication",
-  "Department of Architecture"
-];
-
-const programme=[
-{program: "Engineering Geology", pl: "Jane"},
-{program: "program2", pl: "John"},
-]
+// const programme=[
+// {program: "Engineering Geology", pl: "Jane"},
+// {program: "program2", pl: "John"},
+// ]
 
 const profile=[
   {name: "Jane Doe", des:"Head of Department, Science and Humanities", num:"17111111", email: "jane.cst@rub.edu.bt"}
 ]
 
+const api_token =
+	"a011c6bc3920f5046b16031c19216beba64cca2f4815f1d225e44e7601646b1e00c7d76b6dc0a15fc43da74a8b7619efcbeaaa0bb2a525983ac43c43580a03fc7423112c6462c902049b516f484e78c4eef140969f14ccc1be970885872619e120579a2d8cba9cf1754f7571ec8c407f8dedbd8f7454560747635f3020efae7e";
+
+
 const Academics = () => {
+  const [acdata, setAcdata] = useState([]);
+  const [programdata, setProgramdata] = useState([]);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await axios.get(
+					"http://localhost:1337/api/academics",
+					{
+						headers: {
+							Authorization: `Bearer ${api_token}`,
+						},
+					}
+				);
+				setAcdata(response.data.data);
+			} catch (error) {
+				console.error(error);
+			}
+		};
+		fetchData();
+	}, []);
+
+  useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await axios.get(
+					"http://localhost:1337/api/academics",
+					{
+						headers: {
+							Authorization: `Bearer ${api_token}`,
+						},
+					}
+				);
+				setProgramdata(response.data.data);
+			} catch (error) {
+				console.error(error);
+			}
+		};
+		fetchData();
+	}, []);
+
   return (
   <div>
       <div className="hero-section relative h-[400px]" style={{backgroundImage:`url(${bgDepartment})`}}>
@@ -34,11 +79,11 @@ const Academics = () => {
           <div className="flex flex-col justify-evenly items-center ml-7 text-left leading-loose h-[300px] ">
             <p className="text-white font-bold text-3xl mb-5 block md:hidden">Departments</p>
             <ul className="list-none ">
-              {departments.map((val,index)=>{
+              {acdata.map((val,index)=>{
 				  			return(
 				  				<li key={index} className="mb-4 text-white hover:py-4 px-4 hover:underline underline-offset-8 hover:bg-black hover:bg-opacity-40 hover:text-white transition-all duration-300"> 
 				  				  {" "}
-                      <a href=" " className="text-xl font-medium">{val}</a>
+                      <a href=" " className="text-xl font-medium">{val.attributes.departments}</a>
 				  				</li>
 				  			);
 				  		})}
@@ -80,12 +125,12 @@ const Academics = () => {
                 <td>Programme Leader</td>
               </thead>
               <tbody>
-                {programme.map((val,index)=>{
+                {programdata.map((val,index)=>{
                   return(
                     <tr key={index}>
                       <th>{index}</th>
-                      <td>{val.program}</td>
-                      <td>{val.pl}</td>
+                      <td>{val.attributes.program}</td>
+                      <td>{val.attributes.pl}</td>
                     </tr>
                   );
                 })}

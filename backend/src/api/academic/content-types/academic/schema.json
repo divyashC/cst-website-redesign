@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "academics",
+  "info": {
+    "singularName": "academic",
+    "pluralName": "academics",
+    "displayName": "Academic",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "departments": {
+      "type": "string"
+    },
+    "program": {
+      "type": "string"
+    },
+    "pl": {
+      "type": "string"
+    }
+  }
+}
