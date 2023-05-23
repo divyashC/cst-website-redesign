@@ -37,7 +37,7 @@ const About = () => {
 				</h1>
 			</div>
 
-			<div className="container flex flex-col items-center justify-center py-8 mx-auto md:flex-row">
+			<div className=" flex flex-col items-center justify-center py-8 mx-auto md:flex-row">
 				<img
 					src={VisionImg}
 					alt="Vision"
@@ -67,7 +67,7 @@ const About = () => {
 				</h2>
 			</div>
 
-			<div className="flex flex-col flex-wrap items-center justify-center gap-4 pb-10 lg:items-center lg:justify-center lg:gap-10 lg:flex-row md:flex-row">
+			<div className="flex flex-col flex-wrap items-center justify-center gap-4 pb-10 lg:items-stretch lg:justify-center lg:gap-10 lg:flex-row md:flex-row">
 				{missionData.map((item) => (
 					<MissionCard
 						key={item.id}

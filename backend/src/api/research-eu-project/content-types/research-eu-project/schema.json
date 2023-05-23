@@ -1,24 +1,23 @@
 {
   "kind": "collectionType",
-  "collectionName": "academics",
+  "collectionName": "research_eu_projects",
   "info": {
-    "singularName": "academic",
-    "pluralName": "academics",
-    "displayName": "Academic",
-    "description": ""
+    "singularName": "research-eu-project",
+    "pluralName": "research-eu-projects",
+    "displayName": "research_eu_project"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "departments": {
+    "project_title": {
       "type": "string"
     },
-    "program": {
+    "project_status": {
       "type": "string"
     },
-    "pl": {
+    "link": {
       "type": "string"
     }
   }

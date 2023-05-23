@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * academic service
+ * download service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::academic.academic');
+module.exports = createCoreService('api::download.download');

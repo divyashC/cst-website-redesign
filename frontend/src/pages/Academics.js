@@ -12,10 +12,10 @@ import DofSH from "../assets/images/DofSH.jpg";
 //   "Department of Architecture"
 // ];
 
-// const programme=[
-// {program: "Engineering Geology", pl: "Jane"},
-// {program: "program2", pl: "John"},
-// ]
+const programdata=[
+{program: "Engineering Geology", pl: "Jane"},
+{program: "program2", pl: "John"},
+]
 
 const profile=[
   {name: "Jane Doe", des:"Head of Department, Science and Humanities", num:"17111111", email: "jane.cst@rub.edu.bt"}
@@ -27,7 +27,7 @@ const api_token =
 
 const Academics = () => {
   const [acdata, setAcdata] = useState([]);
-  const [programdata, setProgramdata] = useState([]);
+  // const [programdata, setProgramdata] = useState([]);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -48,24 +48,28 @@ const Academics = () => {
 		fetchData();
 	}, []);
 
-  useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const response = await axios.get(
-					"http://localhost:1337/api/academics",
-					{
-						headers: {
-							Authorization: `Bearer ${api_token}`,
-						},
-					}
-				);
-				setProgramdata(response.data.data);
-			} catch (error) {
-				console.error(error);
-			}
-		};
-		fetchData();
-	}, []);
+
+  const [departmentS,setDepartmentS]=useEffect(acdata[0].attributes.department);
+
+
+  // useEffect(() => {
+	// 	const fetchData = async () => {
+	// 		try {
+	// 			const response = await axios.get(
+	// 				"http://localhost:1337/api/academics",
+	// 				{
+	// 					headers: {
+	// 						Authorization: `Bearer ${api_token}`,
+	// 					},
+	// 				}
+	// 			);
+	// 			setProgramdata(response.data.data);
+	// 		} catch (error) {
+	// 			console.error(error);
+	// 		}
+	// 	};
+	// 	fetchData();
+	// }, []);
 
   return (
   <div>
@@ -83,7 +87,7 @@ const Academics = () => {
 				  			return(
 				  				<li key={index} className="mb-4 text-white hover:py-4 px-4  hover:bg-black hover:bg-opacity-40 hover:text-white transition-all duration-300"> 
 				  				  {" "}
-                      <a href=" " className="text-xl font-medium">{val.attributes.departments}</a>
+                      <button className="text-xl font-medium">{val.attributes.departments}</button>
 				  				</li>
 				  			);
 				  		})}
@@ -129,8 +133,8 @@ const Academics = () => {
                   return(
                     <tr key={index}>
                       <th>{index}</th>
-                      <td>{val.attributes.program}</td>
-                      <td>{val.attributes.pl}</td>
+                      <td>{val.program}</td>
+                      <td>{val.pl}</td>
                     </tr>
                   );
                 })}

@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * academic router
+ * department router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::academic.academic');
+module.exports = createCoreRouter('api::department.department');
