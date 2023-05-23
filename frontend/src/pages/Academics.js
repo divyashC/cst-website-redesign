@@ -81,7 +81,7 @@ const Academics = () => {
             <ul className="list-none ">
               {acdata.map((val,index)=>{
 				  			return(
-				  				<li key={index} className="mb-4 text-white hover:py-4 px-4 hover:underline underline-offset-8 hover:bg-black hover:bg-opacity-40 hover:text-white transition-all duration-300"> 
+				  				<li key={index} className="mb-4 text-white hover:py-4 px-4  hover:bg-black hover:bg-opacity-40 hover:text-white transition-all duration-300"> 
 				  				  {" "}
                       <a href=" " className="text-xl font-medium">{val.attributes.departments}</a>
 				  				</li>
