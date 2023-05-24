@@ -55,8 +55,6 @@ const LifeAtCST = () => {
 		setSelectedClub(club);
 	};
 
-	console.log(selectedClub);
-
 	return (
 		<div>
 			<div className="flex">
@@ -72,12 +70,14 @@ const LifeAtCST = () => {
 						</label>
 						<div className="flex flex-col items-center justify-center gap-3 p-5 rounded-lg scrollbar-hide">
 							<h1 className="text-2xl font-semibold text-left w-[100%]">
-								{selectedClub.attributes.club_name}
+								{selectedClub && selectedClub.attributes.club_name}
 							</h1>
 							<div className="h-[80vh] w-[70vw] bg-[#eee] flex justify-center p-10">
-								<h1 className="text-[150px] text-center">
-									{getIconComponent(selectedClub.attributes.icon_name)}
-								</h1>
+								{selectedClub && (
+									<h1 className="text-[150px] text-center">
+										{getIconComponent(selectedClub.attributes.icon_name)}
+									</h1>
+								)}
 							</div>
 						</div>
 					</div>

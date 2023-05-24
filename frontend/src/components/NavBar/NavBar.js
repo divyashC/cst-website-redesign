@@ -8,7 +8,7 @@ const NavBar = ({ children }) => {
 		<div className="drawer drawer-end">
 		  <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
 		  <div className="drawer-content flex flex-col">
-			<div className="flex items-center justify-between px-6 py-4 bg-transparent shadow-md md:px-8 lg:w-auto lg:px-8">
+			<div className="flex items-center justify-between px-6 py-4 bg-transparent md:px-8 lg:w-auto lg:px-8">
 			  <img className="h-12 md:h-16 lg:h-16" src={CSTLogo} alt="CST" />
 			  <label htmlFor="my-drawer-4" className=" text-black drawer-button">
 				<svg
