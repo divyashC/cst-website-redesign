@@ -60,37 +60,37 @@ import React from "react";
 import clsx from "classnames";
 
 const profiles=[{
-    "id": 12,
+    "id": 1,
     "name": "Dr. Cheki Dorji",
     "role": "President",
     "profiles": [{
-            "id": 83,
+            "id": 2,
             "name": "Dean of Academic Affairs",
             "role": "DAA",
             "profiles": [{
-                    "id": 46,
+                    "id": 8,
                     "name": "Head of Department",
                     "role": "HOD",
                     "profiles": [{
-                            "id": 76,
+                            "id": 17,
                             "name": "Teaching Faculty",
                             "role": " ",
                         },
                         {
-                            "id": 44,
+                            "id": 18,
                             "name": "Lab Technician",
                             "role": " ",
                         }
                     ]
                 },
                 {
-                    "id": 54,
+                    "id": 9,
                     "name": "Exam OC",
                     "role": " ",
                     
                 },
                 {
-                    "id": 55,
+                    "id": 10,
                     "name": "Librarian",
                     "role": " ",
                     
@@ -98,27 +98,27 @@ const profiles=[{
             ]
         },
         {
-            "id": 43,
+            "id": 3,
             "name": "Dean of Student Affairs",
             "role": "DSA",
             "profiles": [{
-                "id": 55,
+                "id": 11,
                 "name": "Student Service Officer",
                 "role": "SSO"
             },
         ]
         },
         {
-            "id": 97,
+            "id": 4,
             "name": "Dean of Research and Industrial Linkages",
             "role": "DRIL",
             "profiles": [{
-                "id": 56,
+                "id": 12,
                 "name": "Institute and Industrial Relation",
                 "role": " "
             },
             {
-                "id": 57,
+                "id": 13,
                 "name": "Publication Manager",
                 "role": " "
             },
@@ -126,12 +126,12 @@ const profiles=[{
             
         },
         {
-            "id": 2,
+            "id": 5,
             "name": "Administrative Officer",
             "role": " ",
             "profiles": [
                 {
-                    "id": 54,
+                    "id": 14,
                     "name": "Estate Manager, Dispatcher, Drivers, Sweepers, Cooks",
                     "role": "Supportive Staff",
                     
@@ -139,21 +139,21 @@ const profiles=[{
             ]
         },
         {
-            "id": 3,
+            "id": 6,
             "name": "Finance Officer",
             "role": " ",
             "profiles": [{
-                "id": 55,
+                "id": 15,
                 "name": "Accountants",
                 "role": " "
             },]
         },
         {
-            "id": 4,
+            "id": 7,
             "name": "ICT Officer",
             "role": "ICT",
             "profiles": [{
-                "id": 55,
+                "id": 16,
                 "name": "ICTA",
                 "role": " "
             },]
@@ -165,6 +165,7 @@ const Organogram=()=>{
         return (
             // bg-gray-400 w-full h-full absolute
             <div className="h-[100vh]">
+              <h1 className="font-semibold text-5xl mt-10 mb-5 text-center overflow-x-hidden">Organogram</h1>
             <div className="flex flex-col justify-start items-start overflow-x-scroll">
               <div className=" text-center pt-5 overflow-y-auto">
                 <div className="items-center justify-center flex">

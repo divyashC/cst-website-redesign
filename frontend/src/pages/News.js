@@ -61,15 +61,6 @@ const App = () => {
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae convallis mi. Phasellus eget nunc luctus, eleifend nisl eu, fringilla lectus. Cras quis nunc ut justo bibendum cursus...',
     },
-    {
-      id: 4,
-      imageSrc: img,
-      views: 500,
-      date: 'May 21, 2023',
-      title: 'Breaking News 4',
-      content:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae convallis mi. Phasellus eget nunc luctus, eleifend nisl eu, fringilla lectus. Cras quis nunc ut justo bibendum cursus...',
-    },
     // Add more news data objects here...
   ];
 

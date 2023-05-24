@@ -1,4 +1,3 @@
-import { useState } from "react";
 import CSTLogo from "../../assets/images/CSTLogo.png";
 import Footer from "../Footer";
 import { Link } from "react-router-dom";

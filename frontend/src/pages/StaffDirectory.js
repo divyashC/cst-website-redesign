@@ -44,7 +44,7 @@ const StaffDirectory = () => {
               {staff.map((data, key) => {
                 return (
                   <div
-                    className="avatar w-[70px] relative z-10 rounded-full flex justify-center hover:scale-[120%] ease-out duration-300 tooltip tooltip-open tooltip-right"
+                    className="avatar w-[70px] relative z-10 rounded-full flex justify-center hover:scale-[120%] ease-out duration-300 tooltip tooltip-right"
                     key={data}
                     data-tip={data.name}
                     onClick={()=>{setStaffSelected(data)}}
@@ -77,8 +77,6 @@ const StaffDirectory = () => {
                     />
                   </figure>
                   <div className="card-body mt-[80%] ">
-                    <h2 className="font-semibold text-xl ml-[13%]">{"Karma delma"}</h2>
-                    <p className="font-normal ml-[13%]">{"Assistant Professor"}</p>
                     <h2 className="font-semibold text-xl ml-[13%]">{staffSelected.name}</h2>
                     <p className="font-normal ml-[13%]">{staffSelected.position}</p>
                     <ul className="flex text-3xl justify-evenly">
@@ -116,6 +114,10 @@ const StaffDirectory = () => {
 
           <ul className="menu p-4 w-80 bg-base-100 text-base-content ">
             <h1 className=" text-[1.75rem] font-bold pb-5">Departments</h1>
+            <li>
+              {" "}
+              <p onClick={()=>{sideNavFunction("Management")}} >Management</p>
+            </li>
             <li>
               {" "}
               <p onClick={()=>{sideNavFunction("Civil Engineering Department")}} >Civil Engineering Department</p>
