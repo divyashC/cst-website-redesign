@@ -4,7 +4,9 @@ import CourseCard from "../components/HomePage/CourseCard";
 import Counter from "../components/HomePage/Counter";
 import Events from "../components/HomePage/EventCard";
 import Announcement from "../components/HomePage/AnnouncementCard";
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import HeroBg from "../assets/images/temp/hero-bg.png";
 import TempCardImage from "../assets/images/temp/course-card.png";
 import NewsTemp from "../assets/images/temp/news-card.png";
@@ -299,6 +301,30 @@ const events = [
 ];
 
 const Home = () => {
+	const settings = {
+		infinite: true,
+		speed: 500,
+		slidesToShow: 4,
+		slidesToScroll: 1,
+    responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+	  };
+
+
 	return (
 		<div className=" ">
 			<img src={HeroBg} alt="Hero Background" className="w-full -top-[100px] relative -z-30" />
@@ -311,18 +337,28 @@ const Home = () => {
 				</h1>
 			</div>
 
-			<div className="flex flex-wrap gap-[40px] justify-center my-10">
+			<div className=" my-[100px] mx-10">
+				<Slider {...settings} className="flex justify-center items-center">
+
 				{courses.map((course) => (
 					<Link to="/programmes" state={{ from: course }}>
 						<CourseCard  key={course.id} course={course} />
 					</Link>
 				))}
+				</Slider>
+				<style>
+      {`
+        .slick-prev:before, .slick-next:before {
+          color: black;
+        }
+      `}
+    </style>
 			</div>
 
 			<Counter />
 
 			<div className="px-4 py-12 mx-auto mt-6 max-w-7xl sm:px-6 lg:px-8">
-				<div className="flex">
+				<div className="flex flex-col lg:flex-row">
 					<div>
 						<h1 className="mb-2 text-3xl font-bold text-black">
 							Announcements

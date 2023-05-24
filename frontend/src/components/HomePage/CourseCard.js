@@ -2,6 +2,8 @@ import React from "react";
 
 const CourseCard = ({ course }) => {
 	return (
+		<div className=" flex justify-center items-center">
+
 		<div className="w-64 overflow-hidden bg-white rounded-lg shadow-md">
 			<img
 				src={course.image}
@@ -11,6 +13,7 @@ const CourseCard = ({ course }) => {
 			<div className="p-4">
 				<h2 className="mb-2 text-lg font-bold text-black">{course.title}</h2>
 			</div>
+		</div>
 		</div>
 	);
 };

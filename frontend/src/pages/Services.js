@@ -14,7 +14,6 @@ const clubs = [
   { name: "ICT Services", icon: <SiAcm /> },
   { name: "Counseling Services", icon: <FaRegHandshake /> },
   { name: "Health Services", icon: <IoIosPeople /> },
-  { name: "Radio", icon: <BsCameraReels /> },
   { name: "Electrical Maintenance", icon: <FaTools /> },
 ];
 
