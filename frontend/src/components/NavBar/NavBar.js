@@ -46,7 +46,15 @@ const NavBar = ({ children }) => {
               </div>
             </li>
             <li>
-              <Link to="/news">News &amp; Announcements</Link>
+            <div className="collapse collapse-arrow pr-5">
+                <input type="checkbox" />
+                <div className="collapse-title pl-0 ">News &amp; Announcements</div>
+                <div className="collapse-content text-[1.2rem] flex flex-col gap-3 pb-0">
+                  <Link to="/news">News</Link>
+                  <Link to="/events">Events</Link>
+                  <Link to="/tender">Tenders</Link>
+                </div>
+              </div>
             </li>
             <li className="my-5">
               <Link to="/research-and-services">Research &amp; Services</Link>

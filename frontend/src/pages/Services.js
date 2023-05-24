@@ -43,7 +43,7 @@ const Services = () => {
 
   return (
     <div>
-      <div className="min-h-[500px] relative" >
+      <div className="min-h-[500px] relative " >
       {/* discard
       style={{background:`url(${ServiceImg})`, backgroundPosition:'center', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundAttachment:'fixed'}} */}
         <img src={ServiceImg} alt="Header" className="w-full h-[500px]" />
