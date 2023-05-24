@@ -43,17 +43,10 @@ const ResearchAndServices = () => {
 	  };
 	return <div>
 		 <div className="hero-section relative">
-<<<<<<< HEAD
-      <img src={researchpage} alt="Hero" className="h-900 w-full" style={{ height: '550px' }} />
+      <img src={researchpage} alt="Hero" className="h-900 w-full" />
 	  <h1 className="absolute bottom-0 left-0 px-10 py-5 text-4xl font-bold text-white">
 					Research and Services
 				</h1>
-=======
-        <img src={researchpage} alt="Hero Background" className="w-full -top-[100px] relative -z-30" />
-        <div className="absolute left-0 px-20 py-20 text-white bottom-5">
-              <h1 className="text-5xl font-bold">Research and Services</h1>	
-				</div>
->>>>>>> c13fa1fa211548e1f879f5195b843a27fb491671
 	  </div>
 	<div className="bg-[##FFFFFF] m-20">
 	<Slider {...settings}>
