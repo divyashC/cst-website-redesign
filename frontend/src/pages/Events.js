@@ -8,7 +8,7 @@ const EventsComponent = ({ imageSrc, views, date, title, content }) => {
   const truncatedContent =
     content && typeof content === 'string' ? content.slice(0, 100) + '...' : '';
   return (
-    <div className="flex items-center justify-center w-[640px] mb-[100px] h-auto p-4 cursor-pointer bg-[#D4D4D4] hover:bg-[#D4D4D4] rounded-[20px]" onClick={() => window.location.href='/events'}>
+    <div className="flex items-center justify-center w-[640px] mb-[100px] h-auto p-4 cursor-pointer bg-white hover:bg-[#D4D4D4] rounded-[20px]" onClick={() => window.location.href='/events'}>
       <div className="flex-none w-1/3 mr-4">
         <img src={imageSrc} alt="Events thumbnail" className="w-full h-auto rounded-lg" />
       </div>
@@ -61,22 +61,31 @@ const App = () => {
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae convallis mi. Phasellus eget nunc luctus, eleifend nisl eu, fringilla lectus. Cras quis nunc ut justo bibendum cursus...',
     },
+    {
+      id: 4,
+      imageSrc: img,
+      views: 500,
+      date: 'May 21, 2023',
+      title: 'Event 4',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae convallis mi. Phasellus eget nunc luctus, eleifend nisl eu, fringilla lectus. Cras quis nunc ut justo bibendum cursus...',
+    },
     // Add more news data objects here...
   ];
 
   return (
     <div>
-      <div className="relative flex justify-center items-center h-[250px] w-auto">
+      <div className="relative flex justify-center items-center h-[200px] w-auto">
         <img src={EventImg} alt="Hero Background" className="w-full -top-[100px] relative -z-30" />
         <h1 className="absolute top-50 left-50 px-20 py-10 text-5xl font-bold text-white">
           Event
         </h1>
       </div>
-      <div className="p-4 bg-white relative">
+      <div className="p-4 bg-[#F4F4F4] relative">
         <div className="flex items-center justify-center">
           <div className="w-1/2">
             {/* Vertical Line */}
-            <div className="border-r-2 border-gray-400 h-[950px] absolute z-10 left-1/2 transform -translate-x-1/2"></div>
+            <div className="border-r-2 border-gray-400 h-[1240px] absolute z-10 left-1/2 transform -translate-x-1/2"></div>
           </div>
         </div>
         <div className="flex">

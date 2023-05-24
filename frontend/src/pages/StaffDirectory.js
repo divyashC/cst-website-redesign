@@ -96,7 +96,6 @@ const StaffDirectory = () => {
                       </li>
                     <li>
                       <a href={staffSelected.site}>
-
                       <AiOutlineLink className="hover:text-sky-500 hover:scale-[120%] transition ease-in delay-200"/>
                       </a>
                       </li>
