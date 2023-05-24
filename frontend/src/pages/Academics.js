@@ -3,6 +3,15 @@ import axios from "axios";
 import bgDepartment from "../assets/images/bg-department.png"; // import your hero image here
 import DofSH from "../assets/images/DofSH.jpg";
 
+
+const depdata=[
+  "Department of Information Technology",
+  "Department of Science and Humanities",
+  "Department of Civil",
+  "Department of Electronics and Communication",
+  "Department of Architecture"
+];
+
 const programdata=[
 {program: "Engineering Geology", pl: "Jane"},
 {program: "program2", pl: "John"},
@@ -17,50 +26,7 @@ const api_token =
 
 
 const Academics = () => {
-  const [acdata, setAcdata] = useState([]);
-  // const [programdata, setProgramdata] = useState([]);
-
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const response = await axios.get(
-					"http://localhost:1337/api/academics",
-					{
-						headers: {
-							Authorization: `Bearer ${api_token}`,
-						},
-					}
-				);
-				setAcdata(response.data.data);
-			} catch (error) {
-				console.error(error);
-			}
-		};
-		fetchData();
-	}, []);
-
-
-  // const [departmentS,setDepartmentS]=useEffect([]);
-
-
-  // useEffect(() => {
-	// 	const fetchData = async () => {
-	// 		try {
-	// 			const response = await axios.get(
-	// 				"http://localhost:1337/api/academics",
-	// 				{
-	// 					headers: {
-	// 						Authorization: `Bearer ${api_token}`,
-	// 					},
-	// 				}
-	// 			);
-	// 			setProgramdata(response.data.data);
-	// 		} catch (error) {
-	// 			console.error(error);
-	// 		}
-	// 	};
-	// 	fetchData();
-	// }, []);
+  // const [departmentS,setDepartmentS]=useEffect(depdata[0]);
 
   return (
   <div>
@@ -74,11 +40,11 @@ const Academics = () => {
           <div className="flex flex-col justify-evenly items-center ml-7 text-left leading-loose h-[300px] ">
             <p className="text-white font-bold text-3xl mb-5 block md:hidden">Departments</p>
             <ul className="list-none ">
-              {acdata.map((val,index)=>{
+              {depdata.map((val,index)=>{
 				  			return(
 				  				<li key={index} className="mb-4 text-white hover:py-4 px-4  hover:bg-black hover:bg-opacity-40 hover:text-white transition-all duration-300"> 
 				  				  {" "}
-                      <button className="text-xl font-medium">{val.attributes.departments}</button>
+                      <button className="text-xl font-medium">{val}</button>
 				  				</li>
 				  			);
 				  		})}

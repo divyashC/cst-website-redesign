@@ -1,75 +1,107 @@
-import { FaAngleRight, FaRegHandshake, FaTools, FaToilet} from "react-icons/fa";
-import {SiAcm} from "react-icons/si";
-import {IoIosPeople} from "react-icons/io";
-import {BsCameraReels, BsJournalBookmark} from "react-icons/bs";
-import {TbPlant2} from "react-icons/tb";
+import {
+	FaAngleRight,
+	FaRegHandshake,
+	FaTools,
+	FaToilet,
+} from "react-icons/fa";
+import { SiAcm } from "react-icons/si";
+import { IoIosPeople } from "react-icons/io";
+import { BsCameraReels, BsJournalBookmark } from "react-icons/bs";
+import { TbClubs, TbPlant2 } from "react-icons/tb";
 import React, { useState } from "react";
-// import { set } from "express/lib/response";
+import axios from "axios";
+import { useEffect } from "react";
 
-const clubs=[{name:"ACM Student Chapter ", icon:<SiAcm/>},
-{name: "BTO", icon:<FaToilet/>},
-{name: "Cultural", icon:<IoIosPeople/>},
-{name: "GNH", icon:<IoIosPeople/>},
-{name: "Kuenphen Tshogpa", icon:<FaRegHandshake/>},
-{name: "Literary", icon:<BsJournalBookmark/>},
-{name: "Maintenance", icon:<FaTools/>},
-{name: "Multi-media", icon:<BsCameraReels/>},
-{name: "Nangpai Zhenu", icon:<BsJournalBookmark/>},
-{name: "NDLD", icon:<IoIosPeople/>},
-{name: "Rangzhing Thuendrel Tshogpa", icon:<TbPlant2/>},
-{name: "Rovers", icon:<IoIosPeople/>},
-{name: "Y-Peer", icon:<IoIosPeople/>} ]
+const getIconComponent = (iconName) => {
+	// Define your icon mapping here
+	const iconMap = {
+		SiAcm: <SiAcm />,
+		FaToilet: <FaToilet />,
+		IoIosPeople: <IoIosPeople />,
+		FaRegHandshake: <FaRegHandshake />,
+		BsJournalBookmark: <BsJournalBookmark />,
+		FaTools: <FaTools />,
+		BsCameraReels: <BsCameraReels />,
+		TbPlant2: <TbPlant2 />,
+	};
 
+	return iconMap[iconName] || null;
+};
 
 const LifeAtCST = () => {
+	const [clubs, setClubs] = useState([]);
 
-	const [club,setClub]=useState(clubs[0]);
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await axios.get("http://localhost:1337/api/clubs", {
+					headers: {
+						Authorization: `Bearer a011c6bc3920f5046b16031c19216beba64cca2f4815f1d225e44e7601646b1e00c7d76b6dc0a15fc43da74a8b7619efcbeaaa0bb2a525983ac43c43580a03fc7423112c6462c902049b516f484e78c4eef140969f14ccc1be970885872619e120579a2d8cba9cf1754f7571ec8c407f8dedbd8f7454560747635f3020efae7e`,
+					},
+				});
+				setClubs(response.data.data);
+				setSelectedClub(response.data.data[0]);
+			} catch (error) {
+				console.error(error);
+			}
+		};
+
+		fetchData();
+	}, []);
+
+	const [selectedClub, setSelectedClub] = useState();
+
+	const handleClubSelection = (club) => {
+		setSelectedClub(club);
+	};
+
+	console.log(selectedClub);
 
 	return (
 		<div>
 			<div className="flex">
-    	  		{/* this is where sidebar starts */}
-    	  		<div className="drawer drawer-mobile scrollbar-hide">
-    	  		  	<input id="my-drawer" type="checkbox" className="drawer-toggle" />
-    	  		  	<div className="drawer-content flex justify-start items-center ">
-    	  		    	<label
-    	  		    	  htmlFor="my-drawer"
-    	  		    	  className="bg-white mt-[200px] ml-[-10px] text-black rounded-r-lg btn top-[100px] hover:text-white hover:bg-slate-400 lg:hidden">
-    	  		    	  <FaAngleRight />
-    	  		    	</label>
-						<div className="flex flex-col justify-center items-center rounded-lg p-5 gap-3 scrollbar-hide">
-							<h1 className="text-2xl font-semibold text-left w-[100%]">{club.name}</h1>
-    	  		 			{/*here we are supposed to put the content  */}
-							
+				{/* this is where sidebar starts */}
+				<div className="drawer drawer-mobile scrollbar-hide">
+					<input id="my-drawer" type="checkbox" className="drawer-toggle" />
+					<div className="flex items-center justify-start drawer-content ">
+						<label
+							htmlFor="my-drawer"
+							className="bg-white mt-[200px] ml-[-10px] text-black rounded-r-lg btn top-[100px] hover:text-white hover:bg-slate-400 lg:hidden"
+						>
+							<FaAngleRight />
+						</label>
+						<div className="flex flex-col items-center justify-center gap-3 p-5 rounded-lg scrollbar-hide">
+							<h1 className="text-2xl font-semibold text-left w-[100%]">
+								{selectedClub.attributes.club_name}
+							</h1>
 							<div className="h-[80vh] w-[70vw] bg-[#eee] flex justify-center p-10">
 								<h1 className="text-[150px] text-center">
-									{club.icon}
-									</h1>
+									{getIconComponent(selectedClub.attributes.icon_name)}
+								</h1>
 							</div>
- 
 						</div>
+					</div>
+					<div className="drawer-side">
+						<label htmlFor="my-drawer" className="drawer-overlay"></label>
 
-        			</div>
-        		<div className="drawer-side">
-          			<label htmlFor="my-drawer" className="drawer-overlay"></label>
-
-          			<ul className="menu p-4 w-80 bg-base-100 text-base-content ">
-          			  <h1 className=" text-[1.75rem] font-bold pb-5">Clubs and Societies</h1>
-						{clubs.map((val,index)=>{
-							return(
-								<li key={index}> 
-								  {" "}
-								  <button onClick={()=>{setClub(val)}}>{val.icon}{" "} {val.name}</button>
+						<ul className="p-4 menu w-80 bg-base-100 text-base-content">
+							<h1 className="text-[1.75rem] font-bold pb-5">
+								Clubs and Societies
+							</h1>
+							{clubs.map((club) => (
+								<li key={club.id}>
+									<button onClick={() => handleClubSelection(club)}>
+										{getIconComponent(club.attributes.icon_name)}{" "}
+										{club.attributes.club_name}
+									</button>
 								</li>
-
-							);
-							})}
-          			</ul>
-        		</div>
-      		</div>
-      		{/* this is where sidebar ends */ }
-    	</div>
-	</div>
+							))}
+						</ul>
+					</div>
+				</div>
+				{/* this is where sidebar ends */}
+			</div>
+		</div>
 	);
 };
 
