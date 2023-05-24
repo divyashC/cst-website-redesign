@@ -48,10 +48,10 @@ const Accommodation = () => {
 		fetchData();
 	}, []);
 	return (
-		<div className="bg-white">
+		<div className=" ">
 			<div className="relative">
-				<img src={HeaderImg} alt="Header" />
-				<div className="absolute left-0 px-20 py-10 text-white bottom-5">
+			<img src={HeaderImg} alt="Hero Background" className="w-full -top-[100px] relative -z-30" />
+				<div className="absolute left-0 px-20 py-20 text-white bottom-5">
 					<h1 className="text-5xl font-bold">Accommodation</h1>
 					<p className="hidden mt-4 text-2xl lg:block">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
