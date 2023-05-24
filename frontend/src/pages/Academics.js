@@ -3,15 +3,6 @@ import axios from "axios";
 import bgDepartment from "../assets/images/bg-department.png"; // import your hero image here
 import DofSH from "../assets/images/DofSH.jpg";
 
-
-// const departments=[
-//   "Department of Information Technology",
-//   "Department of Science and Humanities",
-//   "Department of Civil",
-//   "Department of Electronics and Communication",
-//   "Department of Architecture"
-// ];
-
 const programdata=[
 {program: "Engineering Geology", pl: "Jane"},
 {program: "program2", pl: "John"},
@@ -49,7 +40,7 @@ const Academics = () => {
 	}, []);
 
 
-  const [departmentS,setDepartmentS]=useEffect(acdata[0].attributes.department);
+  // const [departmentS,setDepartmentS]=useEffect([]);
 
 
   // useEffect(() => {

@@ -19,6 +19,8 @@ const clubs = [
 ];
 
 const Services = () => {
+  const [selectedService, setSelectedService] = React.useState(clubs[0].name);
+
   return (
     <div>
       <div className="min-h-[500px] relative" >
@@ -46,7 +48,7 @@ const Services = () => {
               <div className="h-full">
               <div className="flex flex-col rounded-lg p-5 gap-3 scrollbar-hide bg-gray-200 h-auto my-10">
                 {/*here we are supposed to put the content  */}
-                <h1 className="text-2xl font-semibold ml-5 text-left">ICT Services</h1>
+                <h1 className="text-2xl font-semibold ml-5 text-left">{selectedService}</h1>
                 <div className="w-[70vw] h-auto bg-white p-10">
                   <div className="mb-10">
                     <hr className="w-full border-t border-gray-400 my-4" />
@@ -122,9 +124,9 @@ const Services = () => {
                   return (
                     <li key={index}>
                       {" "}
-                      <a href=" ">
+                      <button onClick={()=>{setSelectedService(val.name)}}>
                         {val.icon} {val.name}
-                      </a>
+                      </button>
                     </li>
                   );
                 })}
