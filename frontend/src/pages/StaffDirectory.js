@@ -5,20 +5,21 @@ import React, { useState } from "react";
 
 
 const staff = [
-  "karma",
-  "pema",
-  "nima",
-  "dawa",
-  "kyenphen",
-  "dawa",
-  "redmi",
-  "karze",
+  {name:"karma", position:"President", eMail:"Karma.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"https://www.github.com/Karma",site:"www.karma.com"},
+  {name:"pema", position:"Head of Department", eMail:"Pema.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/Pema",site:"www.pema.com"},
+  {name:"nima", position:"Professor", eMail:"Nima.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/Nima",site:"www.Nima.com"},
+  {name:"dawa", position:"Lecturer", eMail:"dawa.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/dawa",site:"www.dawa.com"},
+  {name:"kyenphen", position:"Assistant Lecturer", eMail:"kyenphen.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/kyenphen",site:"www.kyenphen.com"},
+  {name:"remi", position:"Assistant Lecturer", eMail:"remi.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/remi",site:"www.remi.com"},
+  {name:"hemanth", position:"Assistant Lecturer", eMail:"hemanth.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/hemanth",site:"www.hemanth.com"},
+  {name:"karze", position:"Assistant Lecturer", eMail:"karze.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/karze",site:"www.karze.com"},
 ];
 
 const StaffDirectory = () => {
   const [directoryName, setDirectoryName] = useState(
     "Civil Engineering Department"
   );
+  const [staffSelected,setStaffSelected] = useState(staff[0]);
 
   const sideNavFunction = (data) => {
     setDirectoryName(data);
@@ -43,10 +44,13 @@ const StaffDirectory = () => {
               {staff.map((data, key) => {
                 return (
                   <div
-                    className="avatar w-[70px] rounded-full flex justify-center hover:scale-[120%] ease-out duration-300 "
+                    className="avatar w-[70px] relative z-10 rounded-full flex justify-center hover:scale-[120%] ease-out duration-300 tooltip tooltip-open tooltip-right"
                     key={data}
+                    data-tip={data.name}
+                    onClick={()=>{setStaffSelected(data)}}
+
                   >
-                    <div className="w-9/10 h-[90%] rounded-full tooltip tooltip-right">
+                    <div className="w-9/10 h-[90%] rounded-full " data-tip={data}>
                       <img
                         className="object-cover"
                         src={require("../assets/images/download.jpeg")}
@@ -75,12 +79,30 @@ const StaffDirectory = () => {
                   <div className="card-body mt-[80%] ">
                     <h2 className="font-semibold text-xl ml-[13%]">{"Karma delma"}</h2>
                     <p className="font-normal ml-[13%]">{"Assistant Professor"}</p>
+                    <h2 className="font-semibold text-xl ml-[13%]">{staffSelected.name}</h2>
+                    <p className="font-normal ml-[13%]">{staffSelected.position}</p>
                     <ul className="flex text-3xl justify-evenly">
-                    <li><HiMail className="hover:text-sky-500 hover:scale-[120%] transition ease-in delay-200"/></li>
-                    <li><FaWhatsapp className="hover:text-[#25D366] hover:scale-[120%] transition ease-in delay-200"/></li>
-                    <li><FaGithub className="hover:text-gray-700 hover:scale-[120%] hover:bg-white rounded-2xl transition ease-in delay-200"/></li>
-                    <li><AiOutlineLink className="hover:text-sky-500 hover:scale-[120%] transition ease-in delay-200"/></li>
-                    </ul>
+                    <li>
+                      <a href={staffSelected.eMail}>
+                      <HiMail className="hover:text-sky-500 hover:scale-[120%] transition ease-in delay-200"/>
+                      </a>
+                      </li>
+                    <li>
+                      <a href={staffSelected.wApp}>
+                      <FaWhatsapp className="hover:text-[#25D366] hover:scale-[120%] transition ease-in delay-200"/>
+                      </a>
+                      </li>
+                    <li><a href={staffSelected.gHub}>
+                      <FaGithub className="hover:text-gray-700 hover:scale-[120%] hover:bg-white rounded-2xl transition ease-in delay-200"/>
+                    </a>
+                      </li>
+                    <li>
+                      <a href={staffSelected.site}>
+
+                      <AiOutlineLink className="hover:text-sky-500 hover:scale-[120%] transition ease-in delay-200"/>
+                      </a>
+                      </li>
+                   </ul>
                     
                   </div>
                 </div>

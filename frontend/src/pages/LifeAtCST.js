@@ -4,6 +4,7 @@ import {IoIosPeople} from "react-icons/io";
 import {BsCameraReels, BsJournalBookmark} from "react-icons/bs";
 import {TbPlant2} from "react-icons/tb";
 import React, { useState } from "react";
+// import { set } from "express/lib/response";
 
 const clubs=[{name:"ACM Student Chapter ", icon:<SiAcm/>},
 {name: "BTO", icon:<FaToilet/>},
@@ -22,7 +23,7 @@ const clubs=[{name:"ACM Student Chapter ", icon:<SiAcm/>},
 
 const LifeAtCST = () => {
 
-	const [club,setClub]=useState("ACM Student Chapter");
+	const [club,setClub]=useState(clubs[0]);
 
 	return (
 		<div>
@@ -36,10 +37,15 @@ const LifeAtCST = () => {
     	  		    	  className="bg-white mt-[200px] ml-[-10px] text-black rounded-r-lg btn top-[100px] hover:text-white hover:bg-slate-400 lg:hidden">
     	  		    	  <FaAngleRight />
     	  		    	</label>
-						<div className="flex flex-col rounded-lg p-5 gap-3 scrollbar-hide">
+						<div className="flex flex-col justify-center items-center rounded-lg p-5 gap-3 scrollbar-hide">
+							<h1 className="text-2xl font-semibold text-left w-[100%]">{club.name}</h1>
     	  		 			{/*here we are supposed to put the content  */}
-							<h1 className="text-2xl font-semibold">{club}</h1>
-							<div className="h-[80vh] w-[70vw] bg-[#eee] p-10"></div>
+							
+							<div className="h-[80vh] w-[70vw] bg-[#eee] flex justify-center p-10">
+								<h1 className="text-[150px] text-center">
+									{club.icon}
+									</h1>
+							</div>
  
 						</div>
 
@@ -53,7 +59,7 @@ const LifeAtCST = () => {
 							return(
 								<li key={index}> 
 								  {" "}
-								  <a href=" " >{val.icon}{" "} {val.name}</a>
+								  <button onClick={()=>{setClub(val)}}>{val.icon}{" "} {val.name}</button>
 								</li>
 
 							);

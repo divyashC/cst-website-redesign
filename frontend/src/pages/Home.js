@@ -122,9 +122,9 @@ const events = [
 
 const Home = () => {
 	return (
-		<div className="bg-white">
-			<img src={HeroBg} alt="Hero Background" className="w-full" />
-			<div className="mt-28">
+		<div className=" ">
+			<img src={HeroBg} alt="Hero Background" className="w-full -top-[100px] relative -z-30" />
+			<div id="Programmes" className="mt-28">
 				<h1 className="text-xl italic font-bold text-center text-[#1d83bd]">
 					Our College Curriculum
 				</h1>
