@@ -74,10 +74,11 @@ const NewsPage = () => {
 
   const div3Title = div3Data.title;
   return (
-    <div className=" mx-auto h-[1500px] bg-white">
+    <div className=" ">
       <div className="flex flex-col space-y-8">
         {/* Div 1 */}
-        <div className="relative flex justify-center items-center h-[250px] w-auto" style={{backgroundImage:`url(${NewsImg})`,backgroundPosition:'center',backgroundSize:'cover'}} >
+        <div className="relative flex justify-center items-center h-[250px] w-auto">
+        <img src={NewsImg} alt="Hero Background" className="w-full -top-[100px] relative -z-30" />
 				{/* <img className="w-[1919px] h-[400px]"src={NewsImg} alt="Header" /> */}
 				<h1 className="absolute top-50 left-50 px-20 py-10 text-5xl font-bold text-white">
         {div3Title}
