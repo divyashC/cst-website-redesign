@@ -4,7 +4,8 @@
   "info": {
     "singularName": "club",
     "pluralName": "clubs",
-    "displayName": "Club"
+    "displayName": "Club",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,11 +16,12 @@
       "type": "string"
     },
     "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "description": {
       "type": "text"
@@ -28,11 +30,15 @@
       "type": "string"
     },
     "coordinator_photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "icon_name": {
+      "type": "string"
     }
   }
 }
