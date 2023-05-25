@@ -1,4 +1,5 @@
-// import React from 'react';
+ import React from 'react';
+ import { FiEye } from 'react-icons/fi';
 
 // const NewsComponent = ({ imageSrc, date, title, content }) => {
 //   const truncatedContent = content && typeof content === 'string' ? content.slice(0, 100) + '...' : '';
@@ -50,3 +51,17 @@ const Div4Component = ({ imageSrc, views, date, title, content }) => {
     
   );
 };
+
+
+
+const NewsExpanded = () => {
+  return (
+    <div>
+      <Div3Component/>
+      <Div4Component/>
+    </div>
+  )
+}
+
+export default NewsExpanded
+
