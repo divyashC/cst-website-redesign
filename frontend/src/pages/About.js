@@ -129,12 +129,12 @@ const About = () => {
 				))}
 			</div>
 
-			<div className="bg-white">
+			<div className="bg-white w-[100vw] ">
 				{/* Social Links */}
 				<SocialLinks />
 
 				{/* YouTube Videos */}
-				<div className="max-w-3xl mx-auto mt-12">
+				<div className="max-w-3xl w-[100vw] lg:mx-0 mx-auto  mt-12">
 					<YoutubeVideo
 						title="Promotional Video | College of Science and Technology | Royal University of Bhutan | 2021"
 						embedId="fc09mcvQlQ0"

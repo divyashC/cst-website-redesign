@@ -7,7 +7,7 @@ const profile = [
 	{
 		name: "Jane Doe",
 		des: "Head of Department, Science and Humanities",
-		num: "17111111",
+		num: "+975 17111111",
 		email: "jane.cst@rub.edu.bt",
 	},
 ];

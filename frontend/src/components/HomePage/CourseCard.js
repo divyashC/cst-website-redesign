@@ -2,7 +2,7 @@ import React from "react";
 
 const CourseCard = ({ course }) => {
 	return (
-		<div className=" flex justify-center items-center">
+		<div className=" flex justify-center items-center h-[100%]">
 
 		<div className="w-64 overflow-hidden bg-white rounded-lg shadow-md">
 			<img
