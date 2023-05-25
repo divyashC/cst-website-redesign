@@ -4,7 +4,8 @@
   "info": {
     "singularName": "download",
     "pluralName": "downloads",
-    "displayName": "download"
+    "displayName": "download",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,14 +16,18 @@
       "type": "string"
     },
     "file": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "category": {
+      "type": "string"
     }
   }
 }

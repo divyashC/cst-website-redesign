@@ -4,7 +4,8 @@
   "info": {
     "singularName": "staff-directory",
     "pluralName": "staff-directories",
-    "displayName": "staff_directory"
+    "displayName": "staff_directory",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -31,6 +32,16 @@
     },
     "dept": {
       "type": "string"
+    },
+    "Profile": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
