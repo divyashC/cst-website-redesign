@@ -1,29 +1,49 @@
 import { FaAngleRight,FaGithub,FaWhatsapp} from "react-icons/fa";
 import {HiMail} from "react-icons/hi";
 import {AiOutlineLink} from "react-icons/ai";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 
 const staff = [
-  {name:"karma", position:"President", eMail:"Karma.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"https://www.github.com/Karma",site:"www.karma.com"},
-  {name:"pema", position:"Head of Department", eMail:"Pema.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/Pema",site:"www.pema.com"},
-  {name:"nima", position:"Professor", eMail:"Nima.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/Nima",site:"www.Nima.com"},
-  {name:"dawa", position:"Lecturer", eMail:"dawa.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/dawa",site:"www.dawa.com"},
-  {name:"kyenphen", position:"Assistant Lecturer", eMail:"kyenphen.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/kyenphen",site:"www.kyenphen.com"},
-  {name:"remi", position:"Assistant Lecturer", eMail:"remi.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/remi",site:"www.remi.com"},
-  {name:"hemanth", position:"Assistant Lecturer", eMail:"hemanth.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/hemanth",site:"www.hemanth.com"},
-  {name:"karze", position:"Assistant Lecturer", eMail:"karze.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/karze",site:"www.karze.com"},
+  {name:"karma", position:"President", eMail:"Karma.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"https://www.github.com/Karma",site:"https://www.karma.com"},
+  {name:"pema", position:"Head of Department", eMail:"Pema.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/Pema",site:"https://www.pema.com"},
+  {name:"nima", position:"Professor", eMail:"Nima.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/Nima",site:"https://www.Nima.com"},
+  {name:"dawa", position:"Lecturer", eMail:"dawa.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/dawa",site:"https://www.dawa.com"},
+  {name:"kyenphen", position:"Assistant Lecturer", eMail:"kyenphen.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/kyenphen",site:"https://www.kyenphen.com"},
+  {name:"remi", position:"Assistant Lecturer", eMail:"remi.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/remi",site:"https://www.remi.com"},
+  {name:"hemanth", position:"Assistant Lecturer", eMail:"hemanth.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/hemanth",site:"https://www.hemanth.com"},
+  {name:"karze", position:"Assistant Lecturer", eMail:"karze.cst@rub.edu.bt",wApp:"+975-17660098",gHub:"www.github.com/karze",site:"https://www.karze.com"},
 ];
 
 const StaffDirectory = () => {
+
+  const [staffData, setStaffData] = useState([]);
+	const [selectedDept, setSelectedDept] = useState();
+	
   const [directoryName, setDirectoryName] = useState(
-    "Civil Engineering Department"
+    "Management"
   );
-  const [staffSelected,setStaffSelected] = useState(staff[0]);
+  const [staffSelected,setStaffSelected] = useState([]);
 
   const sideNavFunction = (data) => {
     setDirectoryName(data);
   };
+
+  const api_token="";
+  useEffect(()=>{
+    axios.get("http://localhost:1337//api/department",
+    {headers:{Authorization: `Bearer ${api_token}`}})
+    .then((response)=>{
+      setStaffData(response.data.data);
+      setStaffSelected(response.data.data[0]);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  })
+
+
 
   return (
     <div className="flex">

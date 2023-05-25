@@ -42,6 +42,8 @@ const NavBar = ({ children }) => {
                 <div className="collapse-content text-[1.2rem] flex flex-col gap-3 pb-0">
                   <Link to="/admission-policy">Admission Policy</Link>
                   <Link to="/academics">Department</Link>
+                  <Link to="/fee-structure">Fee Structure</Link>
+
                 </div>
               </div>
             </li>
