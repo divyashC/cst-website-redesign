@@ -24,7 +24,7 @@ const FeeStruture = () => {
         {/* row 1 */}
         <tr>
         <th>Self Financed</th>
-        <th>Nu. 44,924.5</th>
+        <td>Nu.44,924.5</td>
           <td>Nu.12,500</td>
           <td>Nu.750</td>
           <td>Nu.2000</td>
@@ -35,35 +35,35 @@ const FeeStruture = () => {
         {/* row 2 */}
         <tr>
         <th>Government Scholarship</th>
-        <th> - </th>
-          <th> - </th>
-          <th>Nu.750</th>
-          <th>Nu.2000</th>
-          <th>Nu.1000</th>
-          <th>Nu.3750</th>
-          <th>Demand Draft/MoB during registration</th>
+        <td> - </td>
+          <td> - </td>
+          <td>Nu.750</td>
+          <td>Nu.2000</td>
+          <td>Nu.1000</td>
+          <td>Nu.3750</td>
+          <td>Demand Draft/MoB during registration</td>
         
         </tr>
         {/* row 3 */}
         <tr>
         <th>Other Scholarship</th>
-        <th>Scholarship covers (Show proof during registration)</th>
-          <th> 12,500</th>
-          <th>Nu.750</th>
-          <th>Nu.2000</th>
-          <th>Nu.1000</th>
-          <th>Nu.16,250</th>
-          <th>Demand Draft/MoB during registration</th>
+        <td>Scholarship covers (Show proof during registration)</td>
+          <td>Nu.12,500</td>
+          <td>Nu.750</td>
+          <td>Nu.2000</td>
+          <td>Nu.1000</td>
+          <td>Nu.16,250</td>
+          <td>Demand Draft/MoB during registration</td>
         </tr>
         <tr>
         <th>Self Funding Masters</th>
-        <th>Nu.67,387</th>
-          <th> 12,500</th>
-          <th>Nu.750</th>
-          <th>Nu.2000</th>
-          <th>Nu.1000</th>
-          <th>Nu.16,250</th>
-          <th>Demand Draft/MoB during registration</th>
+        <td>Nu.67,387</td>
+          <td>Nu.12,500</td>
+          <td>Nu.750</td>
+          <td>Nu.2000</td>
+          <td>Nu.1000</td>
+          <td>Nu.16,250</td>
+          <td>Demand Draft/MoB during registration</td>
         </tr>
       </tbody>
     </table>

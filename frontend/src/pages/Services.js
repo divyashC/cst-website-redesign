@@ -26,7 +26,6 @@ const servops = [
       {title: "Health Education and Workshops", des:"Our health education sessions cover a variety of topics related to physical, mental, and emotional well-being. We organize workshops on nutrition and healthy eating habits, promoting exercise and physical fitness, and maintaining a balanced lifestyle. Students can learn about safer sex practices, contraception options, and the prevention of sexually transmitted infections. Workshops on stress management techniques, time management, and study skills are also offered to support academic success."},
     ]
   },
-  { name: "Radio", icon: <BsCameraReels />},
   { name: "Electrical Maintenance", icon: <FaTools />,  
     content:[
       {title: "Routine Inspection and Testing", des:"Our electrical maintenance services include regular inspections and testing to ensure the safety and functionality of electrical systems. Our trained technicians conduct thorough examinations of electrical components, wiring, circuits, and equipment to identify any potential issues or hazards. We use advanced tools and techniques to measure electrical parameters, test grounding systems, and assess the integrity of electrical connections."},
