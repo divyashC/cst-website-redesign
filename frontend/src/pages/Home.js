@@ -331,6 +331,7 @@ const Home = () => {
 		useState([]);
 	const [sortedAnnouncements, setSortedAnnouncements] = useState([]);
 	const [sortedEvents, setSortedEvents] = useState([]);
+	const [programmes, setProgrammes] = useState([]);
 
 	useEffect(() => {
 		const fetchNewsAndAnnouncements = async () => {
@@ -369,6 +370,19 @@ const Home = () => {
 		fetchNewsAndAnnouncements();
 	}, []);
 
+	useEffect(() => {
+		axios
+			.get("http://localhost:1337/api/programmes", {
+				headers: { Authorization: `Bearer ${apitoken}` },
+			})
+			.then((response) => {
+				setProgrammes(response.data.data);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	}, []);
+
 	return (
 		<div className="">
 			<img
@@ -386,17 +400,43 @@ const Home = () => {
 			</div>
 
 			<div className=" my-[100px] mx-10">
-				<Slider {...settings} className="flex items-center justify-center">
-					{courses.map((course) => (
-						<Link to="/programmes" state={{ from: course }} key={course.id}>
+				<Slider {...settings}>
+					{/* {courses.map((course) => (
+						<Link
+							to="/programmes"
+							state={{
+								from: course,
+							}}
+							key={course.id}
+						>
 							<CourseCard key={course.id} course={course} />
 						</Link>
-					))}
+					))} */}
+
+					{programmes &&
+						programmes.map((programme) => {
+							return (
+								<Link
+									to="/programmes"
+									state={{
+										from: programme.attributes,
+									}}
+									key={programme.id}
+								>
+									<CourseCard
+										key={programme.id}
+										title={programme.attributes.prog_name}
+										image={TempCardImage}
+									/>
+								</Link>
+							);
+						})}
 				</Slider>
 				<style>
 					{`
         .slick-prev:before, .slick-next:before {
           color: black;
+		  font-size: 40px;
         }
       `}
 				</style>
