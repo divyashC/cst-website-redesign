@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import CourseCard from "../components/HomePage/CourseCard";
 import Counter from "../components/HomePage/Counter";
 import Events from "../components/HomePage/EventCard";
@@ -11,8 +11,12 @@ import HeroBg from "../assets/images/temp/hero-bg.png";
 import TempCardImage from "../assets/images/temp/course-card.png";
 import NewsTemp from "../assets/images/temp/news-card.png";
 
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 import "../assets/css/home.css";
 
+const apitoken = `a011c6bc3920f5046b16031c19216beba64cca2f4815f1d225e44e7601646b1e00c7d76b6dc0a15fc43da74a8b7619efcbeaaa0bb2a525983ac43c43580a03fc7423112c6462c902049b516f484e78c4eef140969f14ccc1be970885872619e120579a2d8cba9cf1754f7571ec8c407f8dedbd8f7454560747635f3020efae7e`;
 const courses = [
 	{
 		id: 1,
@@ -29,19 +33,22 @@ const courses = [
 				"Analyze and mitigate risks in construction projects.",
 				"Communicate and collaborate with project stakeholders.",
 				"Understand legal and regulatory frameworks in construction management.",
-				"Utilize project management software and tools."
-			]
+				"Utilize project management software and tools.",
+			],
 		},
-		careerOptions: "Graduates can pursue careers as construction project managers, construction consultants, facility managers, or work in the construction departments of engineering firms, government agencies, or private construction companies.",
+		careerOptions:
+			"Graduates can pursue careers as construction project managers, construction consultants, facility managers, or work in the construction departments of engineering firms, government agencies, or private construction companies.",
 	},
 	{
 		id: 2,
 		title: "Masters in Renewable Energy",
 		image: TempCardImage,
-		timeDesc: "Master of Engineering in Renewable Energy takes a minimum of one and a half years full time",
+		timeDesc:
+			"Master of Engineering in Renewable Energy takes a minimum of one and a half years full time",
 		desc: "The Master of Engineering in Renewable Energy aims to provide meaningful education on the design, analysis, and implementation of renewable energy systems and energy management. It will enhance the technical and analytical competence of engineers who are working or intend to work in renewable energy and associated fields.",
 		obj: {
-			title: "Master of Engineering in Renewable Energy graduates will be able to:",
+			title:
+				"Master of Engineering in Renewable Energy graduates will be able to:",
 			content: [
 				"Communicate information in a clear and structured way in both oral and written forms.",
 				"Analyse and evaluate environmental, social, and economic impacts of renewable energy infrastructure.",
@@ -54,10 +61,11 @@ const courses = [
 				"Demonstrate a critical awareness of theoretical design concepts and their practical implementation within the renewable energy system.",
 				"Use appropriate software packages and IT skills for modelling and simulation of renewable energy systems.",
 				"Integrate knowledge and research skills to address a research question and continue toward a research career.",
-				"Advise clients on renewable energy projects."
-			]
+				"Advise clients on renewable energy projects.",
+			],
 		},
-		careerOptions: "The graduates of the programme will be able to serve as project engineers, energy and climate experts, energy engineers, energy designers, energy analysts, energy managers, energy policy analysts, energy system maintenance engineers, and researchers. They would be ideal candidates for organizations that emphasize energy system design or application, solar photovoltaic, solar thermal technology, hydropower, biomass energy, biofuels, wind energy systems, and emerging technologies. Graduates can also work as private consultants, entrepreneurs, innovators, and strategists. The demand for graduates of this programme will grow in the coming years as the country's renewable energy initiatives expand.",
+		careerOptions:
+			"The graduates of the programme will be able to serve as project engineers, energy and climate experts, energy engineers, energy designers, energy analysts, energy managers, energy policy analysts, energy system maintenance engineers, and researchers. They would be ideal candidates for organizations that emphasize energy system design or application, solar photovoltaic, solar thermal technology, hydropower, biomass energy, biofuels, wind energy systems, and emerging technologies. Graduates can also work as private consultants, entrepreneurs, innovators, and strategists. The demand for graduates of this programme will grow in the coming years as the country's renewable energy initiatives expand.",
 	},
 	{
 		id: 3,
@@ -75,10 +83,11 @@ const courses = [
 				"Assess and mitigate environmental impacts of civil engineering projects.",
 				"Utilize computer-aided design (CAD) and engineering software.",
 				"Work effectively in multidisciplinary teams.",
-				"Adhere to ethical and professional standards in engineering practice."
-			]
+				"Adhere to ethical and professional standards in engineering practice.",
+			],
 		},
-		careerOptions: "Graduates can pursue careers as civil engineers, structural engineers, transportation engineers, geotechnical engineers, environmental engineers, construction project managers, or work in government agencies, consulting firms, or construction companies.",
+		careerOptions:
+			"Graduates can pursue careers as civil engineers, structural engineers, transportation engineers, geotechnical engineers, environmental engineers, construction project managers, or work in government agencies, consulting firms, or construction companies.",
 	},
 	{
 		id: 4,
@@ -97,10 +106,11 @@ const courses = [
 				"Understand and apply principles of telecommunications systems.",
 				"Utilize software tools for electrical and electronic design and simulation.",
 				"Work effectively in interdisciplinary teams.",
-				"Adhere to ethical and professional standards in engineering practice."
-			]
+				"Adhere to ethical and professional standards in engineering practice.",
+			],
 		},
-		careerOptions: "Graduates can pursue careers as electrical engineers, power system engineers, control system engineers, electronics engineers, telecommunications engineers, or work in industries such as power generation, telecommunications, electronics, automation, and renewable energy.",
+		careerOptions:
+			"Graduates can pursue careers as electrical engineers, power system engineers, control system engineers, electronics engineers, telecommunications engineers, or work in industries such as power generation, telecommunications, electronics, automation, and renewable energy.",
 	},
 	{
 		id: 5,
@@ -118,10 +128,11 @@ const courses = [
 				"Analyze and interpret data using data science techniques.",
 				"Collaborate effectively in multidisciplinary IT projects.",
 				"Stay updated with emerging technologies and trends in the IT industry.",
-				"Adhere to ethical and professional standards in IT practice."
-			]
+				"Adhere to ethical and professional standards in IT practice.",
+			],
 		},
-		careerOptions: "Graduates can pursue careers as software developers, web developers, database administrators, network administrators, cybersecurity analysts, data analysts, IT consultants, or work in various industries such as software development, IT consulting, telecommunications, finance, healthcare, and e-commerce.",
+		careerOptions:
+			"Graduates can pursue careers as software developers, web developers, database administrators, network administrators, cybersecurity analysts, data analysts, IT consultants, or work in various industries such as software development, IT consulting, telecommunications, finance, healthcare, and e-commerce.",
 	},
 	{
 		id: 6,
@@ -130,7 +141,8 @@ const courses = [
 		timeDesc: "Duration: 4 years full-time",
 		desc: "The BE Electronics & Communications Engineering program focuses on providing students with a strong foundation in electronics and communication systems. It covers areas such as electronic circuits, digital systems, signal processing, telecommunications, and wireless communication.",
 		obj: {
-			title: "Graduates of BE Electronics & Communications Engineering will be able to:",
+			title:
+				"Graduates of BE Electronics & Communications Engineering will be able to:",
 			content: [
 				"Design and analyze electronic circuits and systems.",
 				"Develop and implement digital systems and microcontrollers.",
@@ -139,10 +151,11 @@ const courses = [
 				"Understand and apply principles of wireless communication.",
 				"Utilize software tools for electronics and communication design and simulation.",
 				"Work effectively in multidisciplinary teams.",
-				"Adhere to ethical and professional standards in engineering practice."
-			]
+				"Adhere to ethical and professional standards in engineering practice.",
+			],
 		},
-		careerOptions: "Graduates can pursue careers as electronics engineers, communications engineers, telecommunications engineers, embedded systems engineers, or work in industries such as telecommunications, consumer electronics, automotive electronics, aerospace, and defense.",
+		careerOptions:
+			"Graduates can pursue careers as electronics engineers, communications engineers, telecommunications engineers, embedded systems engineers, or work in industries such as telecommunications, consumer electronics, automotive electronics, aerospace, and defense.",
 	},
 	{
 		id: 7,
@@ -151,7 +164,8 @@ const courses = [
 		timeDesc: "Duration: 4 years full-time",
 		desc: "The BE Instrumentation & Control Engineering program focuses on providing students with a strong foundation in instrumentation and control systems. It covers areas such as sensors, measurement techniques, control systems, industrial automation, and process control.",
 		obj: {
-			title: "Graduates of BE Instrumentation & Control Engineering will be able to:",
+			title:
+				"Graduates of BE Instrumentation & Control Engineering will be able to:",
 			content: [
 				"Design and select appropriate instrumentation systems for measuring physical quantities.",
 				"Implement control systems for various applications.",
@@ -159,10 +173,11 @@ const courses = [
 				"Develop and analyze process control systems.",
 				"Utilize software tools for instrumentation and control system design and simulation.",
 				"Work effectively in multidisciplinary teams.",
-				"Adhere to ethical and professional standards in engineering practice."
-			]
+				"Adhere to ethical and professional standards in engineering practice.",
+			],
 		},
-		careerOptions: "Graduates can pursue careers as instrumentation engineers, control system engineers, automation engineers, process control engineers, or work in industries such as manufacturing, oil and gas, power generation, chemical processing, and pharmaceuticals.",
+		careerOptions:
+			"Graduates can pursue careers as instrumentation engineers, control system engineers, automation engineers, process control engineers, or work in industries such as manufacturing, oil and gas, power generation, chemical processing, and pharmaceuticals.",
 	},
 	{
 		id: 8,
@@ -179,10 +194,11 @@ const courses = [
 				"Understand and apply principles of rock mechanics and soil mechanics.",
 				"Provide geological input for engineering design and construction.",
 				"Work effectively in multidisciplinary teams.",
-				"Adhere to ethical and professional standards in engineering practice."
-			]
+				"Adhere to ethical and professional standards in engineering practice.",
+			],
 		},
-		careerOptions: "Graduates can pursue careers as engineering geologists, geological consultants, geotechnical engineers, environmental engineers, or work in industries such as civil engineering, mining, geotechnical consulting, environmental consulting, and geological surveying.",
+		careerOptions:
+			"Graduates can pursue careers as engineering geologists, geological consultants, geotechnical engineers, environmental engineers, or work in industries such as civil engineering, mining, geotechnical consulting, environmental consulting, and geological surveying.",
 	},
 	{
 		id: 9,
@@ -200,10 +216,11 @@ const courses = [
 				"Understand and apply principles of materials science and engineering.",
 				"Utilize software tools for mechanical design and simulation.",
 				"Work effectively in multidisciplinary teams.",
-				"Adhere to ethical and professional standards in engineering practice."
-			]
+				"Adhere to ethical and professional standards in engineering practice.",
+			],
 		},
-		careerOptions: "Graduates can pursue careers as mechanical engineers, design engineers, manufacturing engineers, automotive engineers, aerospace engineers, or work in industries such as automotive, aerospace, energy, manufacturing, consulting, and research and development.",
+		careerOptions:
+			"Graduates can pursue careers as mechanical engineers, design engineers, manufacturing engineers, automotive engineers, aerospace engineers, or work in industries such as automotive, aerospace, energy, manufacturing, consulting, and research and development.",
 	},
 	{
 		id: 10,
@@ -221,10 +238,11 @@ const courses = [
 				"Understand and apply principles of hydraulic engineering.",
 				"Utilize software tools for water engineering design and simulation.",
 				"Work effectively in multidisciplinary teams.",
-				"Adhere to ethical and professional standards in engineering practice."
-			]
+				"Adhere to ethical and professional standards in engineering practice.",
+			],
 		},
-		careerOptions: "Graduates can pursue careers as water resources engineers, hydraulic engineers, environmental engineers, water treatment engineers, wastewater engineers, or work in industries such as water supply and sanitation, environmental consulting, government agencies, research institutions, and non-profit organizations.",
+		careerOptions:
+			"Graduates can pursue careers as water resources engineers, hydraulic engineers, environmental engineers, water treatment engineers, wastewater engineers, or work in industries such as water supply and sanitation, environmental consulting, government agencies, research institutions, and non-profit organizations.",
 	},
 	{
 		id: 11,
@@ -242,63 +260,48 @@ const courses = [
 				"Collaborate with clients, engineers, and other stakeholders in architectural projects.",
 				"Utilize computer-aided design (CAD) and architectural visualization tools.",
 				"Work effectively in multidisciplinary teams.",
-				"Adhere to ethical and professional standards in architectural practice."
-			]
+				"Adhere to ethical and professional standards in architectural practice.",
+			],
 		},
-		careerOptions: "Graduates can pursue careers as architects, architectural designers, urban planners, interior designers, or work in architectural firms, construction companies, real estate development firms, government agencies, or as independent consultants.",
-	}];
-
-
-const announcements = [
-	{
-		views: 135,
-		datePosted: "May 1, 2023",
-		title: "New Features Coming Soon!",
-		description:
-			"We're excited to announce that we're working on some new features that we think you're going to love. Stay tuned for more information!",
-	},
-	{
-		views: 68,
-		datePosted: "April 27, 2023",
-		title: "Office Closure on May 3rd",
-		description:
-			"Our office will be closed on May 3rd due to a company event. We apologize for any inconvenience this may cause.",
-	},
-	{
-		views: 205,
-		datePosted: "April 21, 2023",
-		title: "Company Culture Survey Results",
-		description:
-			"We're happy to share the results of our recent company culture survey. Thank you to everyone who participated!",
+		careerOptions:
+			"Graduates can pursue careers as architects, architectural designers, urban planners, interior designers, or work in architectural firms, construction companies, real estate development firms, government agencies, or as independent consultants.",
 	},
 ];
 
-const events = [
-	{
-		imageUrl: NewsTemp,
-		title: "Upcoming Webinar: Tailwind CSS",
-		views: 327,
-		date: "May 15, 2023",
-		description:
-			"Join us for a free webinar on May 15th to learn the basics of Tailwind CSS.",
-	},
-	{
-		imageUrl: NewsTemp,
-		title: "React Summit 2023",
-		views: 502,
-		date: "June 10-12, 2023",
-		description:
-			"The React Summit is back and better than ever! Join us in San Francisco from June 10-12.",
-	},
-	{
-		imageUrl: NewsTemp,
-		title: "Frontend Development Bootcamp",
-		views: 143,
-		date: "July 1-31, 2023",
-		description:
-			"Our intensive Frontend Development Bootcamp will teach you everything you need to know to build modern web applications.",
-	},
-];
+// const UpdateViewCount = async (announcementId) => {
+// 	const [fetchedAnnouncements, setFetchedAnnouncements] = useState([]);
+
+// 	try {
+// 		const response = await axios.patch(
+// 			`http://localhost:1337/api/news-and-announcements/${announcementId}`,
+// 			{
+// 				data: {
+// 					views:
+// 						fetchedAnnouncements.find(
+// 							(announcement) => announcement.id === announcementId
+// 						).attributes.views + 1,
+// 				},
+// 			},
+// 			{
+// 				headers: {
+// 					Authorization: `Bearer ${apitoken}`,
+// 				},
+// 			}
+// 		);
+
+// 		// Update the state with the updated announcement data
+// 		const updatedAnnouncement = response.data.data;
+// 		const updatedAnnouncements = fetchedAnnouncements.map((announcement) => {
+// 			if (announcement.id === updatedAnnouncement.id) {
+// 				return updatedAnnouncement;
+// 			}
+// 			return announcement;
+// 		});
+// 		setFetchedAnnouncements(updatedAnnouncements);
+// 	} catch (error) {
+// 		console.error("Error updating view count:", error);
+// 	}
+// };
 
 const Home = () => {
 	const settings = {
@@ -306,28 +309,73 @@ const Home = () => {
 		speed: 500,
 		slidesToShow: 4,
 		slidesToScroll: 1,
-    responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-	  };
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 1,
+				},
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+				},
+			},
+		],
+	};
 
+	const [fetchedNewsAndAnnouncements, setFetchedNewsAndAnnouncements] =
+		useState([]);
+	const [sortedAnnouncements, setSortedAnnouncements] = useState([]);
+	const [sortedEvents, setSortedEvents] = useState([]);
+
+	useEffect(() => {
+		const fetchNewsAndAnnouncements = async () => {
+			try {
+				const response = await axios.get(
+					"http://localhost:1337/api/news-and-announcements",
+					{
+						headers: {
+							Authorization: `Bearer ${apitoken}`,
+						},
+					}
+				);
+				const { data } = response.data;
+
+				// Sort the announcements and events by date in descending order
+				const announcements = data.filter(
+					(item) => item.attributes.type === "announcements"
+				);
+				const events = data.filter((item) => item.attributes.type === "events");
+
+				const sortedAnnouncements = announcements.sort(
+					(a, b) => new Date(b.attributes.date) - new Date(a.attributes.date)
+				);
+				const sortedEvents = events.sort(
+					(a, b) => new Date(b.attributes.date) - new Date(a.attributes.date)
+				);
+
+				setFetchedNewsAndAnnouncements(data);
+				setSortedAnnouncements(sortedAnnouncements);
+				setSortedEvents(sortedEvents);
+			} catch (error) {
+				console.error("Error fetching news and announcements:", error);
+			}
+		};
+
+		fetchNewsAndAnnouncements();
+	}, []);
 
 	return (
-		<div className=" ">
-			<img src={HeroBg} alt="Hero Background" className="w-full -top-[100px] relative -z-30" />
+		<div className="">
+			<img
+				src={HeroBg}
+				alt="Hero Background"
+				className="w-full -top-[100px] relative -z-30"
+			/>
 			<div id="Programmes" className="mt-28">
 				<h1 className="text-xl italic font-bold text-center text-[#1d83bd]">
 					Our College Curriculum
@@ -338,21 +386,20 @@ const Home = () => {
 			</div>
 
 			<div className=" my-[100px] mx-10">
-				<Slider {...settings} className="flex justify-center items-center">
-
-				{courses.map((course) => (
-					<Link to="/programmes" state={{ from: course }}>
-						<CourseCard  key={course.id} course={course} />
-					</Link>
-				))}
+				<Slider {...settings} className="flex items-center justify-center">
+					{courses.map((course) => (
+						<Link to="/programmes" state={{ from: course }} key={course.id}>
+							<CourseCard key={course.id} course={course} />
+						</Link>
+					))}
 				</Slider>
 				<style>
-      {`
+					{`
         .slick-prev:before, .slick-next:before {
           color: black;
         }
       `}
-    </style>
+				</style>
 			</div>
 
 			<Counter />
@@ -363,15 +410,24 @@ const Home = () => {
 						<h1 className="mb-2 text-3xl font-bold text-black">
 							Announcements
 						</h1>
-						{announcements.map((announcement, index) => (
-							<React.Fragment key={index}>
-								<Announcement {...announcement} />
-								{index !== announcements.length - 1}
+						{sortedAnnouncements.map((announcement) => (
+							<React.Fragment key={announcement.id}>
+								<Announcement
+									title={announcement.attributes.title}
+									views={announcement.attributes.views}
+									datePosted={announcement.attributes.date}
+									description={
+										announcement.attributes.description
+											.split(" ")
+											.slice(0, 20)
+											.join(" ") + "..."
+									}
+								/>
 							</React.Fragment>
 						))}
 					</div>
 					<hr className="h-auto mx-6 my-10 border-l-2 border-gray-300" />
-					<div>
+					{/* <div>
 						<h1 className="mb-2 text-3xl font-bold text-black">Events</h1>
 						{events.map((event, index) => (
 							<React.Fragment key={index}>
@@ -379,6 +435,26 @@ const Home = () => {
 								{index !== events.length - 1}
 							</React.Fragment>
 						))}
+					</div> */}
+					<div>
+						<h1 className="mb-2 text-3xl font-bold text-black">Events</h1>
+						{sortedEvents &&
+							sortedEvents.map((event) => (
+								<React.Fragment key={event.id}>
+									<Events
+										title={event.attributes.title}
+										views={event.attributes.views}
+										date={event.attributes.date}
+										description={
+											event.attributes.description
+												.split(" ")
+												.slice(0, 20)
+												.join(" ") + "..."
+										}
+										imageUrl={NewsTemp}
+									/>
+								</React.Fragment>
+							))}
 					</div>
 				</div>
 			</div>
