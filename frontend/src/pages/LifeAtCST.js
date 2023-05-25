@@ -8,9 +8,8 @@ import { SiAcm } from "react-icons/si";
 import { IoIosPeople } from "react-icons/io";
 import { BsCameraReels, BsJournalBookmark } from "react-icons/bs";
 import { TbClubs, TbPlant2 } from "react-icons/tb";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useEffect } from "react";
 
 const getIconComponent = (iconName) => {
 	// Define your icon mapping here
@@ -28,6 +27,9 @@ const getIconComponent = (iconName) => {
 	return iconMap[iconName] || null;
 };
 
+const apitoken =
+	"a011c6bc3920f5046b16031c19216beba64cca2f4815f1d225e44e7601646b1e00c7d76b6dc0a15fc43da74a8b7619efcbeaaa0bb2a525983ac43c43580a03fc7423112c6462c902049b516f484e78c4eef140969f14ccc1be970885872619e120579a2d8cba9cf1754f7571ec8c407f8dedbd8f7454560747635f3020efae7e";
+
 const LifeAtCST = () => {
 	const [clubs, setClubs] = useState([]);
 
@@ -36,7 +38,7 @@ const LifeAtCST = () => {
 			try {
 				const response = await axios.get("http://localhost:1337/api/clubs", {
 					headers: {
-						Authorization: `Bearer a011c6bc3920f5046b16031c19216beba64cca2f4815f1d225e44e7601646b1e00c7d76b6dc0a15fc43da74a8b7619efcbeaaa0bb2a525983ac43c43580a03fc7423112c6462c902049b516f484e78c4eef140969f14ccc1be970885872619e120579a2d8cba9cf1754f7571ec8c407f8dedbd8f7454560747635f3020efae7e`,
+						Authorization: `Bearer ${apitoken}`,
 					},
 				});
 				setClubs(response.data.data);
