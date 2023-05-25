@@ -80,9 +80,13 @@ const About = () => {
 		fetchData();
 	}, []);
 	return (
-		<div className=" ">
+		<div className="">
 			<div className="relative flex justify-center items-center h-[250px] w-auto">
-        	<img src={HeaderImg} alt="Hero Background" className="w-full -top-[100px] relative -z-30" />
+				<img
+					src={HeaderImg}
+					alt="Hero Background"
+					className="w-full -top-[100px] relative -z-30"
+				/>
 				<h1 className="absolute bottom-0 left-0 px-6 py-3 text-2xl font-bold text-white md:px-20 md:py-10 md:text-5xl">
 					About CST
 				</h1>
