@@ -65,26 +65,28 @@ const Academics = () => {
 						<p className="block mb-5 text-3xl font-bold text-white md:hidden">
 							Departments
 						</p>
-						<ul className="list-none ">
-							{departmentData.map((dept) => {
-								const { dept_name } = dept.attributes;
-								return (
-									<li
-										key={dept.id}
-										className="px-4 mb-4 text-white transition-all duration-300 hover:py-4 hover:bg-black hover:bg-opacity-40 hover:text-white"
-									>
-										{" "}
-										<button
-											className="text-xl font-medium"
-											onClick={() => handleDeptChange(dept)}
+						{departmentData && (
+							<ul className="list-none ">
+								{departmentData.map((dept) => {
+									const { dept_name } = dept.attributes;
+									return (
+										<li
 											key={dept.id}
+											className="px-4 mb-4 text-white transition-all duration-300 hover:py-4 hover:bg-black hover:bg-opacity-40 hover:text-white"
 										>
-											{dept_name}
-										</button>
-									</li>
-								);
-							})}
-						</ul>
+											{" "}
+											<button
+												className="text-xl font-medium"
+												onClick={() => handleDeptChange(dept)}
+												key={dept.id}
+											>
+												{dept_name}
+											</button>
+										</li>
+									);
+								})}
+							</ul>
+						)}
 					</div>
 				</div>
 			</div>
@@ -109,40 +111,47 @@ const Academics = () => {
 						</div>
 					</div>
 				</div>
-				<div className="flex justify-center">
-					<hr className="w-4/5 my-4 border-t border-gray-400" />
-				</div>
-				<div className="mb-20">
-					<h1 className="mb-6 text-center md:text-2xl lg:text-4xl">
-						Programs Offered
-					</h1>
-					<div className="flex content-center justify-center overflow-x-auto">
-						<table className="table table-zebra w-[90%] mx-auto text-center max-w-4xl">
-							<thead>
-								<tr>
-									<th></th>
-									<th>Programme</th>
-									<th>Programme Leader</th>
-								</tr>
-							</thead>
-							<tbody>
-								{progData
-									.filter(
-										(progData) =>
-											progData.attributes.dept_name ===
-											selectedDept.attributes.dept_name
-									)
-									.map((progData, index) => (
-										<tr key={index}>
-											<th>{index}</th>
-											<td>{progData.attributes.prog_name}</td>
-											<td>{progData.attributes.pl_name}</td>
-										</tr>
-									))}
-							</tbody>
-						</table>
-					</div>
-				</div>
+
+				{selectedDept &&
+					selectedDept.attributes.dept_name !==
+						"Department of Science and Humanities" && (
+						<>
+							<div className="flex justify-center">
+								<hr className="w-4/5 my-4 border-t border-gray-400" />
+							</div>
+							<div className="mb-20">
+								<h1 className="mb-6 text-center md:text-2xl lg:text-4xl">
+									Programs Offered
+								</h1>
+								<div className="flex content-center justify-center overflow-x-auto">
+									<table className="table table-zebra w-[90%] mx-auto text-center max-w-4xl">
+										<thead>
+											<tr>
+												<th></th>
+												<th>Programme</th>
+												<th>Programme Leader</th>
+											</tr>
+										</thead>
+										<tbody>
+											{progData
+												.filter(
+													(progData) =>
+														progData.attributes.dept_name ===
+														selectedDept.attributes.dept_name
+												)
+												.map((progData, index) => (
+													<tr key={index}>
+														<th>{index}</th>
+														<td>{progData.attributes.prog_name}</td>
+														<td>{progData.attributes.pl_name}</td>
+													</tr>
+												))}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</>
+					)}
 				<div className="flex justify-center">
 					<hr className="w-4/5 my-4 border-t border-gray-400" />
 				</div>
