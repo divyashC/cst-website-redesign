@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import bgDepartment from "../assets/images/bg-department.png"; // import your hero image here
 import DofSH from "../assets/images/DofSH.jpg";
+import { BsTelephoneFill } from "react-icons/bs";
+import { HiMail } from "react-icons/hi";
 
 const profile = [
 	{
@@ -141,7 +143,7 @@ const Academics = () => {
 												)
 												.map((progData, index) => (
 													<tr key={index}>
-														<th>{index}</th>
+														<th>{index + 1}</th>
 														<td>{progData.attributes.prog_name}</td>
 														<td>{progData.attributes.pl_name}</td>
 													</tr>
@@ -155,33 +157,38 @@ const Academics = () => {
 				<div className="flex justify-center">
 					<hr className="w-4/5 my-4 border-t border-gray-400" />
 				</div>
-				<div className="flex justify-center mb-5 ">
+				<div className="flex justify-center mt-6 mb-10">
 					<div className="card card-side w-[80vw] sm:w-[400px] flex-col sm:flex-row bg-base-300 shadow-xl">
-						<figure>
+						<figure className="py-0 my-0">
 							<img
 								src={require("../assets/images/download.jpeg")}
-								className="w-[90%] h-[90%] sm:h-[60%] rounded-lg ml-3 mt-3"
+								className="w-[60%] h-[60%] sm:h-[60%] rounded-lg ml-5"
 								alt="Movie"
 							/>
 						</figure>
-						{/* {profile.map((val, index) => {
-							return (
-								<div className="flex flex-col items-start justify-center pl-4 mb-7 sm:mb-0">
-									<h2 className="card-title">{val.name}</h2>
-									<p>{val.des}</p>
-									<p>{val.num}</p>
-									<p>{val.email}</p>
-								</div>
-							);
-						})} */}
+
 						{selectedDept && (
-							<div className="flex flex-col items-start justify-center pl-4 mb-7 sm:mb-0">
+							<div className="flex flex-col items-start justify-center pl-4 mb-2 sm:mb-0">
 								<h2 className="card-title">
 									{selectedDept.attributes.hod_name}
 								</h2>
 								<p>{selectedDept.attributes.dept_name}</p>
-								<p>{selectedDept.attributes.hod_phone}</p>
-								<p>{selectedDept.attributes.hod_email}</p>
+								<p>Head of Department</p>
+								<div className="flex w-full mt-5 justify-evenly">
+									<p
+										className="text-xl tooltip"
+										data-tip={selectedDept.attributes.hod_phone}
+									>
+										<BsTelephoneFill />
+									</p>
+									<a
+										className="text-2xl tooltip"
+										datatip={selectedDept.attributes.hod_email}
+										href={"mailto:" + selectedDept.attributes.hod_email}
+									>
+										<HiMail />
+									</a>
+								</div>
 							</div>
 						)}
 					</div>
