@@ -78,7 +78,7 @@ const App = () => {
       <div className="relative flex justify-center items-center h-[200px] w-auto">
         <img src={EventImg} alt="Hero Background" className="w-full -top-[100px] relative -z-30" />
         <h1 className="absolute top-50 left-50 px-20 py-10 text-5xl font-bold text-white">
-          Event
+          EVENTS
         </h1>
       </div>
       <div className="p-4 bg-[#F4F4F4] relative">
