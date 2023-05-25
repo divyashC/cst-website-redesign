@@ -43,6 +43,9 @@
         "videos",
         "audios"
       ]
+    },
+    "profileurl": {
+      "type": "string"
     }
   }
 }

@@ -146,11 +146,19 @@ const StaffDirectory = () => {
 													className="w-9/10 h-[90%] rounded-full "
 													data-tip={data.attributes.name}
 												>
-													<img
-														className="object-cover"
-														src={require("../assets/images/download.jpeg")}
-														alt="profilePic"
-													/>
+													{data.attributes.profileurl ? (
+														<img
+															className="object-cover"
+															src={data.attributes.profileurl}
+															alt="profilePic"
+														/>
+													) : (
+														<img
+															className="object-cover"
+															src={require("../assets/images/download.jpeg")}
+															alt="profilePic"
+														/>
+													)}
 												</div>
 											</div>
 										);
@@ -169,10 +177,17 @@ const StaffDirectory = () => {
 								<div className="flex flex-col items-center justify-center my-[50px] ">
 									<div className="shadow-xl card w-96 bg-base-100 image-full">
 										<figure>
-											<img
-												src={require("../assets/images/download.jpeg")}
-												alt="staff_picture"
-											/>
+											{staffSelected.attributes.profileurl ? (
+												<img
+													src={staffSelected.attributes.profileurl}
+													alt="staff_picture"
+												/>
+											) : (
+												<img
+													src={require("../assets/images/download.jpeg")}
+													alt="staff_picture"
+												/>
+											)}
 										</figure>
 										<div className="card-body mt-[80%] ">
 											<h2 className="text-xl font-semibold">
@@ -195,7 +210,7 @@ const StaffDirectory = () => {
 													<>
 														<li>
 															<a
-																href={`https://api.whatsapp.com/send?phone=+975${staffSelected.attributes.phone_no}`}
+																href={`https://wa.me/${staffSelected.attributes.phone_no}`}
 															>
 																<FaWhatsapp className="hover:text-[#25D366] hover:scale-[120%] transition ease-in delay-200" />
 															</a>
