@@ -10,7 +10,7 @@ const NavBar = ({ children }) => {
 		  <div className="drawer-content flex flex-col">
 			<div className="flex items-center justify-between px-6 py-4 bg-transparent md:px-8 lg:w-auto lg:px-8">
 			  <img className="h-12 md:h-16 lg:h-16" src={CSTLogo} alt="CST" />
-			  <label htmlFor="my-drawer-4" className=" text-black drawer-button">
+			  <label htmlFor="my-drawer-4" className=" text-[#767676] drawer-button">
 				<svg
 				  className=" fill-current"
 				  xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,9 @@ const NavBar = ({ children }) => {
 		  <div className="drawer-side h-full">
 			<label htmlFor="my-drawer-4" className="drawer-overlay "></label>
 			<ul className="flex flex-col p-10 w-[350px] bg-[#021b2a] text-white text-2xl ">
-			  <img className="h-auto w-20 mx-auto mb-10" src={CSTLogo} alt="CST" />
+			  <a href="/">
+          <img className="h-auto w-20 mx-auto mb-10" src={CSTLogo} alt="CST" />
+          </a>
 			  <li>
 				<Link to="/">Home</Link>
 			  </li>

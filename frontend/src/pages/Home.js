@@ -451,19 +451,24 @@ const Home = () => {
 							Announcements
 						</h1>
 						{sortedAnnouncements.map((announcement) => (
-							<React.Fragment key={announcement.id}>
-								<Announcement
-									title={announcement.attributes.title}
-									views={announcement.attributes.views}
-									datePosted={announcement.attributes.date}
-									description={
-										announcement.attributes.description
-											.split(" ")
-											.slice(0, 20)
-											.join(" ") + "..."
-									}
-								/>
-							</React.Fragment>
+							<Link
+								to="/news-and-announcements"
+								state={{ from: announcement.attributes }}
+							>
+								<React.Fragment key={announcement.id}>
+									<Announcement
+										title={announcement.attributes.title}
+										views={announcement.attributes.views}
+										datePosted={announcement.attributes.date}
+										description={
+											announcement.attributes.description
+												.split(" ")
+												.slice(0, 20)
+												.join(" ") + "..."
+										}
+									/>
+								</React.Fragment>
+							</Link>
 						))}
 					</div>
 					<hr className="h-auto mx-6 my-10 border-l-2 border-gray-300" />
@@ -480,20 +485,25 @@ const Home = () => {
 						<h1 className="mb-2 text-3xl font-bold text-black">Events</h1>
 						{sortedEvents &&
 							sortedEvents.map((event) => (
-								<React.Fragment key={event.id}>
-									<Events
-										title={event.attributes.title}
-										views={event.attributes.views}
-										date={event.attributes.date}
-										description={
-											event.attributes.description
-												.split(" ")
-												.slice(0, 20)
-												.join(" ") + "..."
-										}
-										imageUrl={NewsTemp}
-									/>
-								</React.Fragment>
+								<Link
+									to="/news-and-announcements"
+									state={{ from: event.attributes }}
+								>
+									<React.Fragment key={event.id}>
+										<Events
+											title={event.attributes.title}
+											views={event.attributes.views}
+											date={event.attributes.date}
+											description={
+												event.attributes.description
+													.split(" ")
+													.slice(0, 20)
+													.join(" ") + "..."
+											}
+											imageUrl={NewsTemp}
+										/>
+									</React.Fragment>
+								</Link>
 							))}
 					</div>
 				</div>
