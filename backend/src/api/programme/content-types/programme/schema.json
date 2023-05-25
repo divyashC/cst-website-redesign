@@ -45,6 +45,9 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "duration": {
+      "type": "string"
     }
   }
 }

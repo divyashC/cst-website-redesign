@@ -28,6 +28,9 @@
     },
     "category": {
       "type": "string"
+    },
+    "download_link": {
+      "type": "string"
     }
   }
 }

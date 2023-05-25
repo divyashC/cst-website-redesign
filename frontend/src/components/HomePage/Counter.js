@@ -1,5 +1,9 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import axios from "axios";
+
+const apitoken =
+	"a011c6bc3920f5046b16031c19216beba64cca2f4815f1d225e44e7601646b1e00c7d76b6dc0a15fc43da74a8b7619efcbeaaa0bb2a525983ac43c43580a03fc7423112c6462c902049b516f484e78c4eef140969f14ccc1be970885872619e120579a2d8cba9cf1754f7571ec8c407f8dedbd8f7454560747635f3020efae7e";
 
 const Counter = () => {
 	const studentsRef = useRef(null);
@@ -7,17 +11,32 @@ const Counter = () => {
 	const coursesRef = useRef(null);
 	const yearRef = useRef(null);
 
+	const [data, setData] = useState([]);
+
+	useEffect(() => {
+		axios
+			.get("http://localhost:1337/api/stats", {
+				headers: { Authorization: `Bearer ${apitoken}` },
+			})
+			.then((response) => {
+				setData(response.data.data);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	}, []);
+
 	const { ref, inView } = useInView({
 		threshold: 0.5,
 		triggerOnce: true,
 	});
 
 	useEffect(() => {
-		if (inView) {
-			animateValue(studentsRef.current, 0, 1001, 1500);
-			animateValue(facultyRef.current, 0, 101, 2000);
-			animateValue(coursesRef.current, 0, 11, 1200);
-			animateValue(yearRef.current, 0, 2000, 2000);
+		if (inView && data.length > 0) {
+			animateValue(studentsRef.current, 0, data[0].attributes.students, 1500);
+			animateValue(facultyRef.current, 0, data[0].attributes.faculty, 2000);
+			animateValue(coursesRef.current, 0, data[0].attributes.courses, 1200);
+			animateValue(yearRef.current, 0, data[0].attributes.estd, 2000);
 		}
 	}, [inView]);
 

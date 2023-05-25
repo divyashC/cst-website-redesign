@@ -43,34 +43,34 @@ const Footer = () => {
 						</div>
 						<div className="flex flex-col space-y-2 text-gray-500">
 							<a
-								href="https://ims.rub.edu.bt"
+								href="https://rub.edu.bt"
 								className="transition-colors duration-300 hover:text-blue-700"
 							>
-								RUB IMS
+								RUB OVC
 							</a>
 							<a
-								href="https://vle.cst.edu.bt"
+								href="https://forms.gle/86HLw6Pa7C1ZzF3M7"
 								className="transition-colors duration-300 hover:text-blue-700"
 							>
-								VLE (Moodle)
+								ICT Help Desk
 							</a>
 							<a
-								href="https://lib.cst.edu.bt"
+								href="hhttps://www.rub.edu.bt/index.php/key-documents-2/the-wheel-of-academic-law-2/"
 								className="transition-colors duration-300 hover:text-blue-700"
 							>
-								Library (OPAC)
+								WAL
 							</a>
 							<a
-								href="https://journal.cst.edu.bt"
+								href="https://drive.google.com/file/d/1iZHm3aaLGMoKLN3dz9kG9_9BGKxAQraJ/view"
 								className="transition-colors duration-300 hover:text-blue-700"
 							>
-								Zoring Melong
+								Zhibtshol
 							</a>
 							<a
-								href="http://mail.rub.edu.bt/"
+								href="#"
 								className="transition-colors duration-300 hover:text-blue-700"
 							>
-								Mail
+								RedHat Center
 							</a>
 						</div>
 					</div>
