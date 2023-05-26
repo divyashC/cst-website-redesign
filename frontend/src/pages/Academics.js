@@ -149,7 +149,7 @@ const Academics = () => {
 				<div className="flex justify-center">
 					<hr className="w-4/5 my-4 border-t border-gray-400" />
 				</div>
-				<div className="flex justify-center mt-6 mb-10">
+				{/* <div className="flex justify-center mt-6 mb-10">
 					<div className="card card-side w-[80vw] sm:w-[400px] flex-col sm:flex-row bg-base-300 shadow-xl">
 						<figure className="py-0 my-0">
 							<img
@@ -183,8 +183,8 @@ const Academics = () => {
 								</div>
 							</div>
 						)}
-					</div>
-				</div>
+					</div> */}
+				{/* </div> */}
 			</div>
 		</div>
 	);
