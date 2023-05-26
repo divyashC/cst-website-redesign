@@ -140,7 +140,7 @@ const Home = () => {
 				alt="Hero Background"
 				className="w-full -top-[100px] relative -z-30"
 			/>
-			<div id="Programmes" className="mt-28">
+			<div id="Programmes">
 				<h1 className="text-xl italic font-bold text-center text-[#1d83bd]">
 					Our College Curriculum
 				</h1>
