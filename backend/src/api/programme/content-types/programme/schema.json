@@ -54,6 +54,12 @@
     },
     "pl_profileUrl": {
       "type": "string"
+    },
+    "pl_email": {
+      "type": "email"
+    },
+    "pl_phone": {
+      "type": "string"
     }
   }
 }

@@ -90,9 +90,12 @@ const StaffDirectory = () => {
 
 	useEffect(() => {
 		axios
-			.get("http://localhost:1337/api/staff-directories", {
-				headers: { Authorization: `Bearer ${api_token}` },
-			})
+			.get(
+				"http://localhost:1337/api/staff-directories?pagination[pageSize]=500",
+				{
+					headers: { Authorization: `Bearer ${api_token}` },
+				}
+			)
 			.then((response) => {
 				setStaffData(response.data.data);
 				setStaffSelected(response.data.data[0]);

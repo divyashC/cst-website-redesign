@@ -1,5 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { BsTelephoneFill } from "react-icons/bs";
+import { HiMail } from "react-icons/hi";
 
 const Programmes = () => {
 	const location = useLocation();
@@ -20,6 +22,37 @@ const Programmes = () => {
 					return val === "" ? <br /> : <li key={index}>{val}</li>;
 				})}
 			</p>
+			<div className="flex justify-center mt-6 mb-10">
+				<div className="card card-side w-[80vw] sm:w-[400px] flex-col sm:flex-row bg-base-300 shadow-xl">
+					<figure className="py-0 my-0">
+						<img
+							src={from.pl_profileUrl}
+							className="w-[60%] h-[60%] sm:h-[60%] rounded-lg ml-5"
+							alt="PL"
+						/>
+					</figure>
+
+					{
+						<div className="flex flex-col items-start justify-center pl-4 mb-2 sm:mb-0">
+							<h2 className="card-title">{from.pl_name}</h2>
+							<p>{from.prog_name}</p>
+							<p>Program Leader</p>
+							<div className="flex w-full mt-5 justify-evenly">
+								<p className="text-xl tooltip" data-tip={from.pl_phone}>
+									<BsTelephoneFill />
+								</p>
+								<a
+									className="text-2xl tooltip"
+									data-tip={from.pl_email}
+									href={"mailto:" + from.pl_email}
+								>
+									<HiMail />
+								</a>
+							</div>
+						</div>
+					}
+				</div>
+			</div>
 		</div>
 	);
 };

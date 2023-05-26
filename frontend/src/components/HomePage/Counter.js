@@ -11,6 +11,11 @@ const Counter = () => {
 	const coursesRef = useRef(null);
 	const yearRef = useRef(null);
 
+	var std = 1001;
+	var fac = 101;
+	var crs = 11;
+	var yr = 2000;
+
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
@@ -20,6 +25,10 @@ const Counter = () => {
 			})
 			.then((response) => {
 				setData(response.data.data);
+				std = data[0].attributes.students;
+				fac = data[0].attributes.faculty;
+				crs = data[0].attributes.courses;
+				yr = data[0].attributes.estd;
 			})
 			.catch((error) => {
 				console.log(error);
@@ -64,28 +73,28 @@ const Counter = () => {
 					ref={studentsRef}
 					className="text-4xl font-bold text-white counter"
 				>
-					0
+					{std}
 				</div>
 				<div className="text-lg">Students</div>
 			</div>
 			<hr className="h-24 mx-6 border-l border-white" />
 			<div className="flex flex-col items-center justify-center">
 				<div ref={facultyRef} className="text-4xl font-bold text-white counter">
-					0
+					{fac}
 				</div>
 				<div className="text-lg">Faculty</div>
 			</div>
 			<hr className="h-24 mx-6 border-l border-white" />
 			<div className="flex flex-col items-center justify-center">
 				<div ref={coursesRef} className="text-4xl font-bold text-white counter">
-					0
+					{crs}
 				</div>
 				<div className="text-lg">Courses</div>
 			</div>
 			<hr className="h-24 mx-6 border-l border-white" />
 			<div className="flex flex-col items-center justify-center">
 				<div ref={yearRef} className="text-4xl font-bold text-white counter">
-					0
+					{yr}
 				</div>
 				<div className="text-lg">Estd. Year</div>
 			</div>
