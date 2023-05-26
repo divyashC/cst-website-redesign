@@ -23,6 +23,7 @@ import Accommodation from "./pages/Accommodation";
 import FeeStruture from "./pages/FeeStruture";
 import AdmissionPolicy from "./pages/AdmissionPolicy";
 import NewsComponent from "./components/News/NewsExpanded";
+import Vacancy from "./pages/Vacancy";
 
 import Organogram from "./pages/Organogram";
 
@@ -203,6 +204,14 @@ const App = () => {
 					element={
 						<Layout>
 							<FeeStruture />
+						</Layout>
+					}
+				/>
+				<Route
+					path="/vacancy"
+					element={
+						<Layout>
+							<Vacancy/>
 						</Layout>
 					}
 				/>

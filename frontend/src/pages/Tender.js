@@ -57,7 +57,7 @@ const App = () => {
   
           // Sort the announcements and events by date in descending order
           const announcements = data.filter(
-            (item) => item.attributes.type === "announcements"
+            (item) => item.attributes.type === "tender"
           );
           const events = data.filter((item) => item.attributes.type === "tender");
   

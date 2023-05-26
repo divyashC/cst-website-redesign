@@ -57,9 +57,9 @@ const App = () => {
   
           // Sort the announcements and events by date in descending order
           const announcements = data.filter(
-            (item) => item.attributes.type === "announcements"
+            (item) => item.attributes.type === "news"
           );
-          const events = data.filter((item) => item.attributes.type === "events");
+          const events = data.filter((item) => item.attributes.type === "news");
   
           const sortedAnnouncements = announcements.sort(
             (a, b) => new Date(b.attributes.date) - new Date(a.attributes.date)
@@ -143,6 +143,7 @@ const App = () => {
               if (index % 2 === 0) {
                 // Display news component on the left side
                 return (
+                  
                   <div key={news.id} className="lg:ml-[150px] flex items-center justify-center">
                     {/* Vertical Line */}
                     <div className="lg:w-1/2 relative">

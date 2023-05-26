@@ -57,9 +57,9 @@ const App = () => {
   
           // Sort the announcements and events by date in descending order
           const announcements = data.filter(
-            (item) => item.attributes.type === "events"
+            (item) => item.attributes.type === "vacancies"
           );
-          const events = data.filter((item) => item.attributes.type === "events");
+          const events = data.filter((item) => item.attributes.type === "vacancies");
   
           const sortedAnnouncements = announcements.sort(
             (a, b) => new Date(b.attributes.date) - new Date(a.attributes.date)
@@ -126,7 +126,7 @@ const App = () => {
       <div className="relative flex justify-center items-center  w-auto">
         <img src={NewsImg} alt="Hero Background" className="w-full h-[400px] relative -z-30" />
         <h1 className="absolute top-50 left-50 px-20 py-10 text-5xl font-bold text-white">
-          EVENTS
+          VACANCY
         </h1>
       </div>
       <div className="p-4 bg-[#F4F4F4] relative">
@@ -139,7 +139,7 @@ const App = () => {
         </div>
         <div className="flex">
           <div className="w-full">
-            {sortedAnnouncements.map((news, index) => {
+            {sortedEvents.map((news, index) => {
               if (index % 2 === 0) {
                 // Display news component on the left side
                 return (

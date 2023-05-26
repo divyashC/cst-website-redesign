@@ -2,6 +2,7 @@ import CSTLogo from "../../assets/images/CSTLogo.png";
 import Footer from "../Footer";
 import { Link } from "react-router-dom";
 
+
 const NavBar = ({ children }) => {
   return (
     <div className="bg-[#fff0]">
@@ -66,6 +67,7 @@ const NavBar = ({ children }) => {
                 <div className="collapse-content text-[1.2rem] flex flex-col gap-3 pb-0">
                   <Link to="/news">News</Link>
                   <Link to="/events">Events</Link>
+                  <Link to="/vacancy">Vacancy</Link>
                   <Link to="/tender">Tenders</Link>
                 </div>
               </div>
