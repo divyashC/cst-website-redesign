@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "research_online_journals",
+  "info": {
+    "singularName": "research-online-journal",
+    "pluralName": "research-online-journals",
+    "displayName": "research_online_journal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "journal_name": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

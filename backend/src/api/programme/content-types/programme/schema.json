@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "programmes",
+  "info": {
+    "singularName": "programme",
+    "pluralName": "programmes",
+    "displayName": "programme",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "prog_name": {
+      "type": "string"
+    },
+    "dept_name": {
+      "type": "string"
+    },
+    "pl_name": {
+      "type": "string"
+    },
+    "prog_card_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "prog_objectives": {
+      "type": "text"
+    },
+    "career_related_opportunities": {
+      "type": "text"
+    },
+    "prog_description": {
+      "type": "text"
+    },
+    "pl_photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "duration": {
+      "type": "string"
+    },
+    "card_imgUrl": {
+      "type": "string"
+    },
+    "pl_profileUrl": {
+      "type": "string"
+    },
+    "pl_email": {
+      "type": "email"
+    },
+    "pl_phone": {
+      "type": "string"
+    }
+  }
+}

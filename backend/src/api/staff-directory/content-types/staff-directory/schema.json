@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "staff_directories",
+  "info": {
+    "singularName": "staff-directory",
+    "pluralName": "staff-directories",
+    "displayName": "staff_directory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone_no": {
+      "type": "string"
+    },
+    "github": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "dept": {
+      "type": "string"
+    },
+    "Profile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "profileurl": {
+      "type": "string"
+    }
+  }
+}
