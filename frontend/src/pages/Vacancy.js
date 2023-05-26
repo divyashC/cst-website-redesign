@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import { FiEye } from 'react-icons/fi';
 import axios from 'axios';
+import {Link} from "react-router-dom";
 import NewsImg from "../assets/images/news1.png";
 import img from "../assets/images/dummyNews.png";
 
@@ -13,7 +14,7 @@ const NewsComponent = ({ news}) => {
   
 
   return (
-    <div className="flex items-center justify-center w-[640px] mb-[100px] h-auto p-4 cursor-pointer bg-white hover:bg-[#D4D4D4] rounded-[20px]" onClick={() => window.location.href='/news'}>
+    <div className="flex items-center justify-center w-[640px] mb-[100px] h-auto p-4 cursor-pointer bg-white hover:bg-[#D4D4D4] rounded-[20px]">
       <div className="flex-none w-1/3 mr-4">
         <img src={news.attributes.imageUrl} alt="News thumbnail" className="w-full h-auto rounded-lg" />
       </div>
@@ -143,6 +144,9 @@ const App = () => {
               if (index % 2 === 0) {
                 // Display news component on the left side
                 return (
+                    <Link
+                    to="/news-and-announcements"
+                    state={{ from: news.attributes }}>
                   <div key={news.id} className="lg:ml-[150px] flex items-center justify-center">
                     {/* Vertical Line */}
                     <div className="lg:w-1/2 relative">
@@ -153,6 +157,7 @@ const App = () => {
                       <NewsComponent news={news} />
                     </div>
                   </div>
+                  </Link>
                 );
               } else {
                 // Display news component on the right side
