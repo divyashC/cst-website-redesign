@@ -59,7 +59,7 @@ const App = () => {
           const announcements = data.filter(
             (item) => item.attributes.type === "announcements"
           );
-          const events = data.filter((item) => item.attributes.type === "events");
+          const events = data.filter((item) => item.attributes.type === "tender");
   
           const sortedAnnouncements = announcements.sort(
             (a, b) => new Date(b.attributes.date) - new Date(a.attributes.date)
