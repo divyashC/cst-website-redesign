@@ -1,14 +1,11 @@
 import React from "react";
 import {
   FaAngleRight,
-  FaRegHandshake,
   FaTools,
-  FaToilet,
 } from "react-icons/fa";
 import ServiceImg from "../assets/images/services-header.jpg";
 import { SiAcm } from "react-icons/si";
 import { IoIosPeople } from "react-icons/io";
-import { BsCameraReels} from "react-icons/bs";
 
 const servops = [
   { name: "ICT Services", icon: <SiAcm /> ,
@@ -42,10 +39,10 @@ const Services = () => {
 
   return (
     <div>
-      <div className="min-h-[500px] relative " >
+      <div className="min-h-[400px] relative  " >
       {/* discard
       style={{background:`url(${ServiceImg})`, backgroundPosition:'center', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundAttachment:'fixed'}} */}
-        <img src={ServiceImg} alt="Header" className="w-full h-[500px]" />
+        <img src={ServiceImg} alt="Header" className="w-full h-[400px] object-cover" />
         <div className="absolute top-0 left-0 h-full w-full bg-black opacity-30"></div>
         <div className="absolute left-0 px-20 py-10 text-white bottom-5">
           <h1 className="text-3xl sm:text-5xl font-bold">Service and Facilities</h1>

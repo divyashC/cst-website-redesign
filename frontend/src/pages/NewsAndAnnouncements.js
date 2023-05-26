@@ -9,14 +9,14 @@ const NewsCard = ({ imageSrc, date, title, content }) => {
 		content && typeof content === "string" ? content.slice(0, 100) + "..." : "";
 
 	return (
-		<div className="flex flex-col border border-gray-300 rounded-md shadow-md py-4 ml-20 w-[80%]">
+		<div className="flex flex-col border border-gray-300 rounded-md shadow-md pb-4 ml-20 mb-10 w-[80%]">
 			<div
 				className="h-[538px] bg-cover bg-center rounded-t-md"
 				style={{ backgroundImage: `url(${imageSrc})` }}
 			></div>
-			<div className="text-blue-500 text-[26px] font-medium my-2">{title}</div>
-			<div className="mb-2 text-sm text-gray-500">{date}</div>
-			<div className="text-gray-600">{content}</div>
+			<div className="text-blue-500 text-[26px] font-medium my-2 pl-3">{title}</div>
+			<div className="mb-2 pl-3 text-sm text-gray-500">{date}</div>
+			<div className="text-gray-600 px-4">{content}</div>
 		</div>
 	);
 };
@@ -102,14 +102,14 @@ const NewsPage = () => {
 				</div>
 
 				{/* News Content */}
-				<div className="flex flex-wrap">
+				<div className="flex justify-center items-start">
 					{/* Main News Card */}
 					<div className="w-full lg:w-8/12">
 						<NewsCard {...newsCardData} />
 					</div>
 
 					{/* Related News */}
-					<div className="w-full lg:w-4/12">
+					{/* <div className="w-full lg:w-4/12">
 						{relatedNewsData.map((data, index) => (
 							<div key={index}>
 								<RelatedNewsCard {...data} />
@@ -118,7 +118,7 @@ const NewsPage = () => {
 								)}
 							</div>
 						))}
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>

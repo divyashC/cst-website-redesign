@@ -171,7 +171,7 @@ const profiles = [
 const Organogram = () => {
   return (
     // bg-gray-400 w-full h-full absolute
-    <div className="h-[100vh]">
+    <div className="h-[100vh] relative">
       <h1 className="font-semibold text-5xl mt-10 mb-5 text-center overflow-x-hidden">
         Organogram
       </h1>

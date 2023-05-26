@@ -4,9 +4,9 @@ import image2 from "../assets/images/researchcenterimage2.jpg"
 
 const Crsed = () => {
   return (
-    <div className="mt-14">
+    <div className="mt-14 mx-auto">
     <h1 className="text-center font-bold text-2xl mt-8 mb-7">Centre for Renewable and Sustainable Energy Development (CRSED)</h1>
-    <div className="ml-8 mb-8">
+    <div className="ml-10 mb-8 mx-auto">
     <h1 className="font-bold text-lg mb-4 ml-4">Vision</h1>
     <h3 className="mb-5 ml-8">To be the centre of excellence in the field of renewable and sustainable energy technology.</h3>
     </div>
@@ -23,7 +23,7 @@ const Crsed = () => {
 </ul>
 </div>
 
-<div className="flex flex-wrap">
+<div className="flex flex-wrap mt-[20px]">
   <div className="w-full lg:w-1/2 bg-white-200 p-6">
      <div className="ml-8">
       <h2 className="mb-7 font-bold">Center Coordinator</h2>
@@ -33,7 +33,7 @@ const Crsed = () => {
      </div>
   </div>
   <div className="w-full lg:w-1/2 bg-white-400 p-6 flex items-center justify-center">
-    <img src={image} alt="image" className="max-w-full"/>
+    <img src={image} alt="coordinator" className="max-w-full"/>
   </div>
 </div>
 

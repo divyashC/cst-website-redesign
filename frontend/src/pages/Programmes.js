@@ -17,7 +17,7 @@ const Programmes = () => {
 			<p className="mb-1 text-lg text-left">
 				{/* {from.prog_objectives.split(".")[0] + "."} */}
 				{from.prog_objectives.split("\n")?.map((val, index) => {
-					return val == "" ? <br /> : <li key={index}>{val}</li>;
+					return val === "" ? <br /> : <li key={index}>{val}</li>;
 				})}
 			</p>
 		</div>

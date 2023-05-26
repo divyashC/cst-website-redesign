@@ -5,14 +5,6 @@ import DofSH from "../assets/images/DofSH.jpg";
 import { BsTelephoneFill } from "react-icons/bs";
 import { HiMail } from "react-icons/hi";
 
-const profile = [
-	{
-		name: "Jane Doe",
-		des: "Head of Department, Science and Humanities",
-		num: "+975 17111111",
-		email: "jane.cst@rub.edu.bt",
-	},
-];
 
 const api_token =
 	"a011c6bc3920f5046b16031c19216beba64cca2f4815f1d225e44e7601646b1e00c7d76b6dc0a15fc43da74a8b7619efcbeaaa0bb2a525983ac43c43580a03fc7423112c6462c902049b516f484e78c4eef140969f14ccc1be970885872619e120579a2d8cba9cf1754f7571ec8c407f8dedbd8f7454560747635f3020efae7e";
@@ -54,7 +46,7 @@ const Academics = () => {
 	return (
 		<div>
 			<div
-				className="hero-section relative h-[400px]"
+				className=" relative h-[400px] w-auto"
 				style={{ backgroundImage: `url(${bgDepartment})` }}
 			>
 				<div className="absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
@@ -103,6 +95,7 @@ const Academics = () => {
 						<img
 							src={DofSH}
 							className="xs:w-[30%] rounded-lg shadow-2xl w-[300px]"
+							alt="Department_Picture"
 						/>
 						<div>
 							{selectedDept && (

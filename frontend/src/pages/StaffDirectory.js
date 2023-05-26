@@ -4,72 +4,72 @@ import { AiOutlineLink, AiOutlinePhone } from "react-icons/ai";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const staff = [
-	{
-		name: "karma",
-		position: "President",
-		eMail: "Karma.cst@rub.edu.bt",
-		phone_no: "+975-17660098",
-		gitHub: "https://www.github.com/Karma",
-		website: "https://www.karma.com",
-	},
-	{
-		name: "pema",
-		position: "Head of Department",
-		eMail: "Pema.cst@rub.edu.bt",
-		phone_no: "+975-17660098",
-		gitHub: "www.github.com/Pema",
-		website: "https://www.pema.com",
-	},
-	{
-		name: "nima",
-		position: "Professor",
-		eMail: "Nima.cst@rub.edu.bt",
-		phone_no: "+975-17660098",
-		gitHub: "www.github.com/Nima",
-		website: "https://www.Nima.com",
-	},
-	{
-		name: "dawa",
-		position: "Lecturer",
-		eMail: "dawa.cst@rub.edu.bt",
-		phone_no: "+975-17660098",
-		gitHub: "www.github.com/dawa",
-		website: "https://www.dawa.com",
-	},
-	{
-		name: "kyenphen",
-		position: "Assistant Lecturer",
-		eMail: "kyenphen.cst@rub.edu.bt",
-		phone_no: "+975-17660098",
-		gitHub: "www.github.com/kyenphen",
-		website: "https://www.kyenphen.com",
-	},
-	{
-		name: "remi",
-		position: "Assistant Lecturer",
-		eMail: "remi.cst@rub.edu.bt",
-		phone_no: "+975-17660098",
-		gitHub: "www.github.com/remi",
-		website: "https://www.remi.com",
-	},
-	{
-		name: "hemanth",
-		position: "Assistant Lecturer",
-		eMail: "hemanth.cst@rub.edu.bt",
-		phone_no: "+975-17660098",
-		gitHub: "www.github.com/hemanth",
-		website: "https://www.hemanth.com",
-	},
-	{
-		name: "karze",
-		position: "Assistant Lecturer",
-		eMail: "karze.cst@rub.edu.bt",
-		phone_no: "+975-17660098",
-		gitHub: "www.github.com/karze",
-		website: "https://www.karze.com",
-	},
-];
+// const staff = [
+// 	{
+// 		name: "karma",
+// 		position: "President",
+// 		eMail: "Karma.cst@rub.edu.bt",
+// 		phone_no: "+975-17660098",
+// 		gitHub: "https://www.github.com/Karma",
+// 		website: "https://www.karma.com",
+// 	},
+// 	{
+// 		name: "pema",
+// 		position: "Head of Department",
+// 		eMail: "Pema.cst@rub.edu.bt",
+// 		phone_no: "+975-17660098",
+// 		gitHub: "www.github.com/Pema",
+// 		website: "https://www.pema.com",
+// 	},
+// 	{
+// 		name: "nima",
+// 		position: "Professor",
+// 		eMail: "Nima.cst@rub.edu.bt",
+// 		phone_no: "+975-17660098",
+// 		gitHub: "www.github.com/Nima",
+// 		website: "https://www.Nima.com",
+// 	},
+// 	{
+// 		name: "dawa",
+// 		position: "Lecturer",
+// 		eMail: "dawa.cst@rub.edu.bt",
+// 		phone_no: "+975-17660098",
+// 		gitHub: "www.github.com/dawa",
+// 		website: "https://www.dawa.com",
+// 	},
+// 	{
+// 		name: "kyenphen",
+// 		position: "Assistant Lecturer",
+// 		eMail: "kyenphen.cst@rub.edu.bt",
+// 		phone_no: "+975-17660098",
+// 		gitHub: "www.github.com/kyenphen",
+// 		website: "https://www.kyenphen.com",
+// 	},
+// 	{
+// 		name: "remi",
+// 		position: "Assistant Lecturer",
+// 		eMail: "remi.cst@rub.edu.bt",
+// 		phone_no: "+975-17660098",
+// 		gitHub: "www.github.com/remi",
+// 		website: "https://www.remi.com",
+// 	},
+// 	{
+// 		name: "hemanth",
+// 		position: "Assistant Lecturer",
+// 		eMail: "hemanth.cst@rub.edu.bt",
+// 		phone_no: "+975-17660098",
+// 		gitHub: "www.github.com/hemanth",
+// 		website: "https://www.hemanth.com",
+// 	},
+// 	{
+// 		name: "karze",
+// 		position: "Assistant Lecturer",
+// 		eMail: "karze.cst@rub.edu.bt",
+// 		phone_no: "+975-17660098",
+// 		gitHub: "www.github.com/karze",
+// 		website: "https://www.karze.com",
+// 	},
+// ];
 
 const api_token =
 	"a011c6bc3920f5046b16031c19216beba64cca2f4815f1d225e44e7601646b1e00c7d76b6dc0a15fc43da74a8b7619efcbeaaa0bb2a525983ac43c43580a03fc7423112c6462c902049b516f484e78c4eef140969f14ccc1be970885872619e120579a2d8cba9cf1754f7571ec8c407f8dedbd8f7454560747635f3020efae7e";

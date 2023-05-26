@@ -6,7 +6,7 @@ const Library = () => {
 	return (
 		<div className=" ">
 			<div className="relative">
-			<img src={HeaderImg} alt="Hero Background" className="w-full -top-[100px] relative -z-30" />
+			<img src={HeaderImg} alt="Hero Background" className="w-full  h-[400px] object-cover relative -z-30" />
 				<div className="absolute left-0 px-20 py-20 text-white bottom-5">
 					<h1 className="text-5xl font-bold">Library</h1>
 					<p className="mt-4 text-2xl">

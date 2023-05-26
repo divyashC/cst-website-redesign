@@ -43,7 +43,7 @@ const ResearchAndServices = () => {
 	  };
 	return <div>
 		 <div className="hero-section relative">
-      <img src={researchpage} alt="Hero" className="h-900 w-full" />
+      <img src={researchpage} alt="Hero" className="h-[400px] w-full object-cover" />
 	  <h1 className="absolute bottom-0 left-0 px-10 py-5 text-4xl font-bold text-white">
 					Research and Services
 				</h1>
@@ -51,20 +51,20 @@ const ResearchAndServices = () => {
 	<div className="bg-[##FFFFFF] m-20">
 	<Slider {...settings}>
     <div className="px-5 ">
-    <div className="mx-2 h-64 shadow-lg bg-transparent"><a href="https://www.facebook.com/CST.University/"><img className="w-full h-full object-cover"  src={image1} /></a></div>
+    <div className="mx-2 h-64 shadow-lg bg-transparent"><a href="https://www.facebook.com/CST.University/"><img className="w-full h-full object-cover"  src={image1}  alt="eventImg"/></a></div>
     </div>
     <div className="px-5 shadow-md rounded-sm">
-    <div className="mx-2 h-64 "><a href="https://www.facebook.com/CST.University/"><img className="w-full h-full object-cover"  src={image2} /></a></div>
+    <div className="mx-2 h-64 "><a href="https://www.facebook.com/CST.University/"><img className="w-full h-full object-cover"  src={image2} alt="eventImg"/></a></div>
     </div>
     <div className="px-5 ">
-    <div className="mx-2 h-64 shadow-lg"><a href="https://www.facebook.com/CST.University/"><img className="w-full h-full object-cover"  src={image3} /></a></div>
+    <div className="mx-2 h-64 shadow-lg"><a href="https://www.facebook.com/CST.University/"><img className="w-full h-full object-cover"  src={image3} alt="eventImg"/></a></div>
     </div>
     <div className="px-5 ">
 
-    <div className="mx-2 h-64 shadow-lg"><a href="https://www.facebook.com/CST.University/"><img className="w-full h-full object-cover"  src={image4} /></a></div>
+    <div className="mx-2 h-64 shadow-lg"><a href="https://www.facebook.com/CST.University/"><img className="w-full h-full object-cover"  src={image4} alt="eventImg"/></a></div>
     </div>
     <div className="px-5 ">
-    <div className="mx-2 h-64 shadow-lg"><a href="https://www.facebook.com/CST.University/"><img className="w-full h-full object-cover"  src={image5} /></a></div>
+    <div className="mx-2 h-64 shadow-lg"><a href="https://www.facebook.com/CST.University/"><img className="w-full h-full object-cover"  src={image5} alt="eventImg"/></a></div>
     </div>
     </Slider>
 	<style>
@@ -76,7 +76,7 @@ const ResearchAndServices = () => {
     </style>
 	</div>
   
-<div className="flex justify-start ml-[100px]">
+<div className="flex justify-center items-stretch">
   <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-3">
     <div className="h-80 bg-[#eee] rounded-lg shadow-lg p-4">
     <h1 className="font-bold">Center for renewable and Sustainable Energy Development(CRSED)</h1>
@@ -95,7 +95,7 @@ const ResearchAndServices = () => {
     </div>
   </div>
   <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-3 ml-[50px]">
-    <div className="h-65 bg-[#eee] rounded-lg shadow-lg p-4">
+    <div className="h-80 bg-[#eee] rounded-lg shadow-lg p-4">
     <h1 className="font-bold">Center for Disaster Risk Reduction and Community Development Studies(CDRRCDS)</h1>
     <Link to="/research-and-services/crsed">
     <button className="bg-[#ffcocb] p-3 font-semibold mt-[120px] self-end mt-12 ml-6"><a href="#_" class="relative inline-flex items-center justify-center p-4 px-4 py-1 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-blue-500 rounded-full shadow-md group">
@@ -140,57 +140,57 @@ const ResearchAndServices = () => {
           <p>
           <ul>               
           <li>
-          <a href="#" className="text-blue-500 hover:text-blue-700">
+          <a href=" " className="text-blue-500 hover:text-blue-700">
           <AiOutlineLink className="hover:text-sky-500 hover:scale-[120%] transition ease-in delay-200"/><p className="ml-6 mt-[-20px]">Ebsco</p>
           </a>
           </li>
           <li>
-          <a href="#" className="text-blue-500 hover:text-blue-700">
+          <a href=" " className="text-blue-500 hover:text-blue-700">
           <AiOutlineLink className="hover:text-sky-500 hover:scale-[120%] transition ease-in delay-200"/><p className="ml-6 mt-[-20px]">Building Green</p>
           </a>
           </li>
           <li>
-          <a href="#" className="text-blue-500 hover:text-blue-700">
+          <a href=" " className="text-blue-500 hover:text-blue-700">
           <AiOutlineLink className="hover:text-sky-500 hover:scale-[120%] transition ease-in delay-200"/><p className="ml-6 mt-[-20px]">Open Access Library</p>
           </a>
           </li>
           <li>
-          <a href="#" className="text-blue-500 hover:text-blue-700">
+          <a href=" " className="text-blue-500 hover:text-blue-700">
           <AiOutlineLink className="hover:text-sky-500 hover:scale-[120%] transition ease-in delay-200"/><p className="ml-6 mt-[-20px]">JSTOR</p>
           </a>
           </li>
           <li>
-          <a href="#" className="text-blue-500 hover:text-blue-700">
+          <a href=" " className="text-blue-500 hover:text-blue-700">
           <AiOutlineLink className="hover:text-sky-500 hover:scale-[120%] transition ease-in delay-200"/><p className="ml-6 mt-[-20px]">Research4Life</p>
           </a>
           </li>
           <li>
-          <a href="#" className="text-blue-500 hover:text-blue-700">
+          <a href=" " className="text-blue-500 hover:text-blue-700">
           <AiOutlineLink className="hover:text-sky-500 hover:scale-[120%] transition ease-in delay-200"/><p className="ml-6 mt-[-20px]">Taylor & Francis Online</p>
           </a>
           </li>
           <li>
-          <a href="#" className="text-blue-500 hover:text-blue-700">
+          <a href=" " className="text-blue-500 hover:text-blue-700">
           <AiOutlineLink className="hover:text-sky-500 hover:scale-[120%] transition ease-in delay-200"/><p className="ml-6 mt-[-20px]">ASCE- Journal of Construction Engineering and Management</p>
           </a>
           </li>
           <li>
-          <a href="#" className="text-blue-500 hover:text-blue-700">
+          <a href=" " className="text-blue-500 hover:text-blue-700">
           <AiOutlineLink className="hover:text-sky-500 hover:scale-[120%] transition ease-in delay-200"/><p className="ml-6 mt-[-20px]">NOCMAR Journal</p>
           </a>
           </li>
           <li>
-          <a href="#" className="text-blue-500 hover:text-blue-700">
+          <a href=" " className="text-blue-500 hover:text-blue-700">
           <AiOutlineLink className="hover:text-sky-500 hover:scale-[120%] transition ease-in delay-200"/><p className="ml-6 mt-[-20px]">European Journal of Energy Research</p>
           </a>
           </li>
           <li>
-          <a href="#" className="text-blue-500 hover:text-blue-700">
+          <a href=" " className="text-blue-500 hover:text-blue-700">
           <AiOutlineLink className="hover:text-sky-500 hover:scale-[120%] transition ease-in delay-200"/><p className="ml-6 mt-[-20px]">Hindawi</p>
           </a>
           </li>
           <li>
-          <a href="#" className="text-blue-500 hover:text-blue-700">
+          <a href=" " className="text-blue-500 hover:text-blue-700">
           <AiOutlineLink className="hover:text-sky-500 hover:scale-[120%] transition ease-in delay-200"/><p className="ml-6 mt-[-20px]">Journal of Renewable Energy and Environment</p>
           </a>
           </li>     
@@ -247,61 +247,61 @@ const ResearchAndServices = () => {
       <td className="py-4 px-6">1</td>
       <td className="py-4 px-6">Erasmus+ KA 107 project</td>
       <td className="py-4 px-6">Active</td>
-      <td className="py-4 px-6"><a href="#" className="text-blue-500 hover:text-blue-700">Click Here</a></td>
+      <td className="py-4 px-6"><a href=" " className="text-blue-500 hover:text-blue-700">Click Here</a></td>
     </tr>
     <tr>
       <td className="py-4 px-6">2</td>
       <td className="py-4 px-6">Erasmus+ KA 107 project</td>
       <td className="py-4 px-6">Active</td>
-      <td className="py-4 px-6"><a href="#" className="text-blue-500 hover:text-blue-700">Click Here</a></td>
+      <td className="py-4 px-6"><a href=" " className="text-blue-500 hover:text-blue-700">Click Here</a></td>
     </tr>
     <tr>
       <td className="py-4 px-6">3</td>
       <td className="py-4 px-6">Erasmus+ KA 107 project</td>
       <td className="py-4 px-6">Active</td>
-      <td className="py-4 px-6"><a href="#" className="text-blue-500 hover:text-blue-700">Click Here</a></td>
+      <td className="py-4 px-6"><a href=" " className="text-blue-500 hover:text-blue-700">Click Here</a></td>
     </tr>
     <tr>
       <td className="py-4 px-6">4</td>
       <td className="py-4 px-6">Erasmus+ KA 107 project</td>
       <td className="py-4 px-6">Active</td>
-      <td className="py-4 px-6"><a href="#" className="text-blue-500 hover:text-blue-700">Click Here</a></td>
+      <td className="py-4 px-6"><a href=" " className="text-blue-500 hover:text-blue-700">Click Here</a></td>
     </tr>
     <tr>
       <td className="py-4 px-6">5</td>
       <td className="py-4 px-6">Erasmus+ KA 107 project</td>
       <td className="py-4 px-6">Active</td>
-      <td className="py-4 px-6"><a href="#" className="text-blue-500 hover:text-blue-700">Click Here</a></td>
+      <td className="py-4 px-6"><a href=" " className="text-blue-500 hover:text-blue-700">Click Here</a></td>
     </tr>
     <tr>
       <td className="py-4 px-6">6</td>
       <td className="py-4 px-6">Erasmus+ KA 107 project</td>
       <td className="py-4 px-6">Active</td>
-      <td className="py-4 px-6"><a href="#" className="text-blue-500 hover:text-blue-700">Click Here</a></td>
+      <td className="py-4 px-6"><a href=" " className="text-blue-500 hover:text-blue-700">Click Here</a></td>
     </tr>
     <tr>
       <td className="py-4 px-6">7</td>
       <td className="py-4 px-6">Erasmus+ KA 107 project</td>
       <td className="py-4 px-6">Active</td>
-      <td className="py-4 px-6"><a href="#" className="text-blue-500 hover:text-blue-700">Click Here</a></td>
+      <td className="py-4 px-6"><a href=" " className="text-blue-500 hover:text-blue-700">Click Here</a></td>
     </tr>
     <tr>
       <td className="py-4 px-6">8</td>
       <td className="py-4 px-6">Erasmus+ KA 107 project</td>
       <td className="py-4 px-6">Active</td>
-      <td className="py-4 px-6"><a href="#" className="text-blue-500 hover:text-blue-700">Click Here</a></td>
+      <td className="py-4 px-6"><a href=" " className="text-blue-500 hover:text-blue-700">Click Here</a></td>
     </tr>
     <tr>
       <td className="py-4 px-6">9</td>
       <td className="py-4 px-6">Erasmus+ KA 107 project</td>
       <td className="py-4 px-6">Active</td>
-      <td className="py-4 px-6"><a href="#" className="text-blue-500 hover:text-blue-700">Click Here</a></td>
+      <td className="py-4 px-6"><a href=" " className="text-blue-500 hover:text-blue-700">Click Here</a></td>
     </tr>
     <tr>
       <td className="py-4 px-6">10</td>
       <td className="py-4 px-6">Erasmus+ KA 107 project</td>
       <td className="py-4 px-6">Active</td>
-      <td className="py-4 px-6"><a href="#" className="text-blue-500 hover:text-blue-700">Click Here</a></td>
+      <td className="py-4 px-6"><a href=" " className="text-blue-500 hover:text-blue-700">Click Here</a></td>
     </tr>
   </tbody>
   </table>      
