@@ -500,7 +500,7 @@ const Home = () => {
 													.slice(0, 20)
 													.join(" ") + "..."
 											}
-											imageUrl={NewsTemp}
+											imageUrl={event.attributes.imageUrl}
 										/>
 									</React.Fragment>
 								</Link>

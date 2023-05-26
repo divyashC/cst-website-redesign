@@ -53,7 +53,7 @@ const NewsPage = () => {
 	const { from } = location.state;
 
 	const newsCardData = {
-		imageSrc: NewsImg1,
+		imageSrc: from.imageUrl,
 		date: from.date,
 		title: from.title,
 		content: from.description,

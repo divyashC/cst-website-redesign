@@ -181,10 +181,12 @@ const StaffDirectory = () => {
 												<img
 													src={staffSelected.attributes.profileurl}
 													alt="staff_picture"
+													className="object-fill"
 												/>
 											) : (
 												<img
 													src={require("../assets/images/download.jpeg")}
+													className="object-cover"
 													alt="staff_picture"
 												/>
 											)}
