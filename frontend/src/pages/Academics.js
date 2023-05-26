@@ -5,7 +5,6 @@ import DofSH from "../assets/images/DofSH.jpg";
 import { BsTelephoneFill } from "react-icons/bs";
 import { HiMail } from "react-icons/hi";
 
-
 const api_token =
 	"a011c6bc3920f5046b16031c19216beba64cca2f4815f1d225e44e7601646b1e00c7d76b6dc0a15fc43da74a8b7619efcbeaaa0bb2a525983ac43c43580a03fc7423112c6462c902049b516f484e78c4eef140969f14ccc1be970885872619e120579a2d8cba9cf1754f7571ec8c407f8dedbd8f7454560747635f3020efae7e";
 
@@ -154,7 +153,7 @@ const Academics = () => {
 					<div className="card card-side w-[80vw] sm:w-[400px] flex-col sm:flex-row bg-base-300 shadow-xl">
 						<figure className="py-0 my-0">
 							<img
-								src={require("../assets/images/download.jpeg")}
+								src={selectedDept.attributes.hod_profileUrl}
 								className="w-[60%] h-[60%] sm:h-[60%] rounded-lg ml-5"
 								alt="Movie"
 							/>
@@ -176,7 +175,7 @@ const Academics = () => {
 									</p>
 									<a
 										className="text-2xl tooltip"
-										datatip={selectedDept.attributes.hod_email}
+										data-tip={selectedDept.attributes.hod_email}
 										href={"mailto:" + selectedDept.attributes.hod_email}
 									>
 										<HiMail />

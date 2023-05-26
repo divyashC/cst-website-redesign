@@ -48,6 +48,12 @@
     },
     "duration": {
       "type": "string"
+    },
+    "card_imgUrl": {
+      "type": "string"
+    },
+    "pl_profileUrl": {
+      "type": "string"
     }
   }
 }

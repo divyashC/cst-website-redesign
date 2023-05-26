@@ -22,11 +22,12 @@
       "type": "text"
     },
     "dept_card_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "hod_post": {
       "type": "string"
@@ -36,6 +37,9 @@
     },
     "hod_email": {
       "type": "email"
+    },
+    "hod_profileUrl": {
+      "type": "string"
     }
   }
 }

@@ -426,7 +426,7 @@ const Home = () => {
 									<CourseCard
 										key={programme.id}
 										title={programme.attributes.prog_name}
-										image={TempCardImage}
+										image={programme.attributes.card_imgUrl}
 									/>
 								</Link>
 							);
